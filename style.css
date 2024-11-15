@@ -1,70 +1,89 @@
-
-* {
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+/* Parallax Effect */
+.parallax {
+    background-image: url('your-image-url.jpg'); /* Replace with your own image URL */
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding-top: 20%;
+}
+
+.content {
+    background-color: white;
+    padding: 20px;
+    font-size: 18px;
+}
+
+/* Fade In Effect */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* AOS Scroll Animations */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-aos="zoom-in"] {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Horizontal Scrolling */
+.horizontal-scroll {
+    display: flex;
+    overflow-x: scroll;
+    padding: 20px 0;
+}
+
+.scroll-item {
+    min-width: 200px;
+    margin-right: 20px;
+    background-color: lightblue;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+}
+
+/* Smooth Scroll */
+html {
     scroll-behavior: smooth;
 }
 
-:root {
-    --primary-color: #111;
-    --secondary-color: #555;
-    --accent-color: #d4af37; /* Gold */
-    --background-color: #f4f4f4;
+/* Lazy Loading Image */
+.lazy {
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    color: var(--secondary-color);
-    background-color: var(--background-color);
+.lazy.loaded {
+    opacity: 1;
 }
 
-header {
-    text-align: center;
-    padding: 2rem;
-    background-color: var(--primary-color);
-    color: var(--accent-color);
+/* Hover Effects */
+button, a {
+    transition: all 0.3s ease;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+button:hover, a:hover {
+    transform: scale(1.1);
+    color: #FF6347;
 }
-
-header nav a {
-    color: var(--accent-color);
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: bold;
-}
-
-header nav a:hover {
-    color: var(--secondary-color);
-}
-
-section {
-    padding: 2rem;
-    margin: 2rem 0;
-    background: var(--background-color);
-    border-left: 5px solid var(--accent-color);
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-}
-
-.cursor {
-    width: 30px;
-    height: 30px;
-    background: url("https://loading.io/icon/ix7bcb") no-repeat center center;
-    background-size: contain;
-    position: absolute;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease;
-}
-
