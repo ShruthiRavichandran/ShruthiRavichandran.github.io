@@ -1,89 +1,143 @@
-/* Global Styles */
+/* General Body and Layout */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-/* Parallax Effect */
-.parallax {
-    background-image: url('your-image-url.jpg'); /* Replace with your own image URL */
+* {
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+header {
+    background-color: #1f1f1f;
+    padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+/* Landing Section */
+.landing {
     height: 100vh;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url('https://source.unsplash.com/1600x900/?technology');
     background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     text-align: center;
-    padding-top: 20%;
 }
 
-.content {
-    background-color: white;
+.landing h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.landing p {
+    font-size: 1.5rem;
+}
+
+/* Sections Styling */
+.section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    font-size: 18px;
+    margin: 10px;
+    flex: 1 1 calc(33% - 20px);
+    text-align: center;
 }
 
-/* Fade In Effect */
-.fade-in {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+.project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
-.fade-in.visible {
-    opacity: 1;
+.project-card p {
+    font-size: 1rem;
+    color: #555;
 }
 
-/* AOS Scroll Animations */
-[data-aos="fade-up"] {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+.project-card:hover {
+    background-color: #f1f1f1;
 }
 
-[data-aos="zoom-in"] {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* Horizontal Scrolling */
-.horizontal-scroll {
+/* Grid for Project Cards */
+.research-projects, .maker-projects, .design-projects {
     display: flex;
-    overflow-x: scroll;
-    padding: 20px 0;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.scroll-item {
-    min-width: 200px;
-    margin-right: 20px;
-    background-color: lightblue;
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer Styling */
+footer {
     text-align: center;
     padding: 20px;
-    font-size: 18px;
+    background-color: #1f1f1f;
+    color: #fff;
 }
 
-/* Smooth Scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Lazy Loading Image */
-.lazy {
-    opacity: 0;
-    transition: opacity 1s ease-in;
-}
-
-.lazy.loaded {
-    opacity: 1;
-}
-
-/* Hover Effects */
-button, a {
-    transition: all 0.3s ease;
-}
-
-button:hover, a:hover {
-    transform: scale(1.1);
-    color: #FF6347;
+/* Custom Cursor */
+body {
+    cursor: url('https://tumshalftimeheroes.com/cdn/shop/products/6a85523c-e1aa-4f98-a37e-8bfd02d4ec0c_557539bd-9557-43fa-8015-25e2cba4d183.png?v=1707502569&width=1445'), auto;
 }
