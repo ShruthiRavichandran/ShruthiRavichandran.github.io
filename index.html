@@ -3,55 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cool Scroll Effects</title>
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <title>Your Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://loading.io/icon/ix7bcb" type="image/x-icon">
 </head>
 <body>
 
-<!-- Parallax Effect Section -->
-<div class="parallax">
-    <h1>Your Cool Title</h1>
-    <p>More cool content here</p>
-</div>
+<!-- Navbar -->
+<header>
+    <nav>
+        <div class="logo">Kim's Portfolio</div>
+        <ul>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#maker">Maker Portfolio</a></li>
+            <li><a href="#design">Design Portfolio</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+        </ul>
+    </nav>
+</header>
 
-<!-- Content Section -->
-<div class="content">
-    <p>Scroll down for the cool parallax effect!</p>
-</div>
+<!-- Landing Section -->
+<section class="landing">
+    <div class="landing-content">
+        <h1>Welcome to My Professional Portfolio</h1>
+        <p>Exploring the intersection of EECS and Design.</p>
+    </div>
+</section>
 
-<!-- Fade In Effect -->
-<div class="fade-in">
-    <h2>This will fade in as you scroll</h2>
-    <p>More content that fades in when scrolling.</p>
-</div>
+<!-- Research Section -->
+<section id="research" class="section">
+    <h2>Research</h2>
+    <p>Here is an overview of my research in electromagnetics, biosensors, and other areas of interest.</p>
+    <div class="research-projects">
+        <!-- You can add specific research projects here -->
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <p>Brief description of the research project goes here.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 2</h3>
+            <p>Brief description of the research project goes here.</p>
+        </div>
+    </div>
+</section>
 
-<!-- AOS Scroll Animations -->
-<div data-aos="fade-up">
-    <h2>This text fades up when scrolled into view</h2>
-</div>
-<div data-aos="zoom-in">
-    <p>This content zooms in when scrolling</p>
-</div>
+<!-- Maker Portfolio Section -->
+<section id="maker" class="section">
+    <h2>Maker Portfolio</h2>
+    <p>Projects where I use my skills in fabrication, hardware, and creative problem solving.</p>
+    <div class="maker-projects">
+        <!-- Add your maker projects here -->
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <p>Brief description of the maker project.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 2</h3>
+            <p>Brief description of the maker project.</p>
+        </div>
+    </div>
+</section>
 
-<!-- Horizontal Scrolling Section -->
-<div class="horizontal-scroll">
-    <div class="scroll-item">Item 1</div>
-    <div class="scroll-item">Item 2</div>
-    <div class="scroll-item">Item 3</div>
-</div>
+<!-- Design Portfolio Section -->
+<section id="design" class="section">
+    <h2>Design Portfolio</h2>
+    <p>Design work that combines aesthetics with functionality.</p>
+    <div class="design-projects">
+        <!-- Add your design portfolio items here -->
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <p>Brief description of the design project.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 2</h3>
+            <p>Brief description of the design project.</p>
+        </div>
+    </div>
+</section>
 
-<!-- Lazy Loading Image -->
-<img class="lazy" data-src="your-image.jpg" alt="Lazy Loaded Image">
+<!-- Hobbies Section -->
+<section id="hobbies" class="section">
+    <h2>Hobbies</h2>
+    <p>When I'm not working on my academic and design projects, I enjoy a variety of hobbies.</p>
+    <ul>
+        <li>Hiking & Trekking</li>
+        <li>A Cappella Music</li>
+        <li>Mentoring</li>
+        <li>Building Projects for Fun</li>
+    </ul>
+</section>
 
-<!-- Smooth Scroll Anchor -->
-<a href="#section1">Go to Section 1</a>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Kim's Portfolio. All rights reserved.</p>
+</footer>
 
-<div id="section1">
-    <h2>Welcome to Section 1</h2>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
