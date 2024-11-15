@@ -1,45 +1,70 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #111;
+    --secondary-color: #555;
+    --accent-color: #d4af37; /* Gold */
+    --background-color: #f4f4f4;
 }
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    color: var(--secondary-color);
+    background-color: var(--background-color);
 }
 
 header {
     text-align: center;
     padding: 2rem;
-    background-color: #007acc;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
 }
 
-nav a {
-    margin: 0 1rem;
-    color: #fff;
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header nav a {
+    color: var(--accent-color);
     text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: var(--secondary-color);
 }
 
 section {
-    padding: 4rem 2rem;
-    margin: 2rem auto;
-    max-width: 800px;
-}
-
-section h2 {
-    color: #007acc;
-    border-bottom: 2px solid #007acc;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    background: var(--background-color);
+    border-left: 5px solid var(--accent-color);
 }
 
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
 }
+
+.cursor {
+    width: 30px;
+    height: 30px;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/0/05/Crystal_Clear_app_kcmsystem.svg") no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+}
+
