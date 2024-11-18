@@ -1,84 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shruthi Ravichandran</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Styling for the color bar */
-        .navbar {
-            background-color: #001f3f; /* Dark navy blue */
-            color: white;
-            padding: 10px 20px;
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Styling for navbar links */
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 20px;
-            display: inline-block;
-        }
-
-        .navbar a:hover {
-            background-color: #575757;
-        }
-
-        /* Page content styling */
-        .content {
-            margin: 20px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Section styling */
-        .section {
-            display: none;
-        }
-
-        /* Show active section */
-        .active {
-            display: block;
-        }
-
-        /* Two-column layout for Home page */
-        .home-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start; /* Align text to the top */
-        }
-
-        .home-text {
-            width: 60%;
-        }
-
-        .home-image {
-            width: 35%;
-            border-radius: 10px;
-        }
-
-        .home-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        /* Adjust links in lists */
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="navbar">
     <a href="javascript:void(0);" onclick="showSection('home')">Home</a> 
-    <a href="javascript:void(0);" onclick="showSection('projects')">Projects</a>
+    <a href="javascript:void(0);" onclick="showSection('projects')">Design Portfolio</a>
     <a href="javascript:void(0);" onclick="showSection('research')">Research</a>
 </div>
 
@@ -101,11 +34,9 @@
     <!-- Projects Section -->
     <div id="projects" class="section">
         <h3>Projects</h3>
-        <p>This is the "Projects" section. Here you can find various projects I've worked on during my time at MIT. Click on the project links to learn more.</p>
+        <p>This is the "Design Portfolio" section. Here you can find various projects I've worked on during my time at MIT. Click on the project links to learn more.</p>
         <ul>
-            <li><a href="#">Project 1: Diagnostic Tool for Low Resource Communities</a></li>
-            <li><a href="#">Project 2: AI in Healthcare</a></li>
-            <li><a href="#">Project 3: Smart Wearables for Health Monitoring</a></li>
+            <li><a href="#">add projects here</a></li>
         </ul>
     </div>
 
@@ -114,9 +45,7 @@
         <h3>Research</h3>
         <p>This is the "Research" section. Here you can learn about the research topics I'm currently involved in, including the development of new diagnostic tools and advancements in medical technology.</p>
         <ul>
-            <li><a href="#">Research 1: Advancements in Diagnostic Technology</a></li>
-            <li><a href="#">Research 2: Wearable Sensors for Real-Time Health Monitoring</a></li>
-            <li><a href="#">Research 3: Machine Learning for Predictive Healthcare</a></li>
+            <li>research</li>
         </ul>
     </div>
 </div>
