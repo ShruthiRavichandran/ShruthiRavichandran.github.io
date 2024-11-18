@@ -1,4 +1,144 @@
 <!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Styling for the color bar */
+        .navbar {
+            background-color: #001f3f; /* Dark navy blue */
+            color: white;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Styling for navbar links */
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+        /* Page content styling */
+        .content {
+            margin: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Section styling */
+        .section {
+            display: none;
+        }
+
+        /* Show active section */
+        .active {
+            display: block;
+        }
+
+        /* Two-column layout for Home page */
+        .home-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Align text to the top */
+        }
+
+        .home-text {
+            width: 60%;
+        }
+
+        .home-image {
+            width: 35%;
+            border-radius: 10px;
+        }
+
+        .home-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Adjust links in lists */
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="javascript:void(0);" onclick="showSection('home')">Home</a> 
+    <a href="javascript:void(0);" onclick="showSection('projects')">Projects</a>
+    <a href="javascript:void(0);" onclick="showSection('research')">Research</a>
+</div>
+
+<div class="content">
+    <!-- Home Section -->
+    <div id="home" class="section active">
+        <div class="home-container">
+            <!-- Left Column: Text Content -->
+            <div class="home-text">
+                <h3>Shruthi Ravichandran</h3>
+                <p>Hi! I'm Shruthi, a fourth-year undergrad at <a href="https://web.mit.edu" target="_blank">MIT</a>, studying EECS and Design. I am passionate about using those to create diagnostic tools for low-resource communities. I currently work with Professor <a href="https://meche.mit.edu/people/faculty/lozat@mit.edu" target="_blank">Loza Tadesse</a> and Professor <a href="https://meche.mit.edu/people/faculty/cgt20@mit.edu" target="_blank">Giovanni Traverso</a> at MIT MechE. Click through the tabs to see some projects I've worked on and please feel free to contact me at shruthi (at) mit (dot) edu!</p>
+            </div>
+            <!-- Right Column: Image -->
+            <div class="home-image">
+                <img src="https://www.dropbox.com/scl/fi/zp6fnxeg2ha7qfa0qf9tr/Ravichandran_Shruthi_Headshot-min.JPG?rlkey=1rnoznu657vdqsopm1m09ucxx&raw=1" alt="Shruthi Ravichandran">
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="section">
+        <h3>Projects</h3>
+        <p>This is the "Projects" section. Here you can find various projects I've worked on during my time at MIT. Click on the project links to learn more.</p>
+        <ul>
+            <li><a href="#">Project 1: Diagnostic Tool for Low Resource Communities</a></li>
+            <li><a href="#">Project 2: AI in Healthcare</a></li>
+            <li><a href="#">Project 3: Smart Wearables for Health Monitoring</a></li>
+        </ul>
+    </div>
+
+    <!-- Research Section -->
+    <div id="research" class="section">
+        <h3>Research</h3>
+        <p>This is the "Research" section. Here you can learn about the research topics I'm currently involved in, including the development of new diagnostic tools and advancements in medical technology.</p>
+        <ul>
+            <li><a href="#">Research 1: Advancements in Diagnostic Technology</a></li>
+            <li><a href="#">Research 2: Wearable Sensors for Real-Time Health Monitoring</a></li>
+            <li><a href="#">Research 3: Machine Learning for Predictive Healthcare</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    // Function to show the active section and hide others
+    function showSection(sectionId) {
+        // Hide all sections
+        var sections = document.querySelectorAll('.section');
+        sections.forEach(function(section) {
+            section.classList.remove('active');
+        });
+        
+        // Show the selected section
+        var activeSection = document.getElementById(sectionId);
+        activeSection.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
