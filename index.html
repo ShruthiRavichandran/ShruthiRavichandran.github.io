@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shruthi Ravichandran</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -13,58 +11,128 @@
     <a href="javascript:void(0);" onclick="showSection('home')">Home</a> 
     <a href="javascript:void(0);" onclick="showSection('projects')">Design Portfolio</a>
     <a href="javascript:void(0);" onclick="showSection('research')">Research</a>
+    <a href="javascript:void(0);" onclick="showSection('featured')">Featured</a>
 </div>
 
 <div class="content">
     <!-- Home Section -->
     <div id="home" class="section active">
         <div class="home-container">
-            <!-- Left Column: Text Content -->
             <div class="home-text">
                 <h3>Shruthi Ravichandran</h3>
                 <p>Hi! I'm Shruthi, a fourth-year undergrad at <a href="https://web.mit.edu" target="_blank">MIT</a>, studying EECS and Design. I am passionate about using those to create diagnostic tools for low-resource communities. I currently work with Professor <a href="https://meche.mit.edu/people/faculty/lozat@mit.edu" target="_blank">Loza Tadesse</a> and Professor <a href="https://meche.mit.edu/people/faculty/cgt20@mit.edu" target="_blank">Giovanni Traverso</a> at MIT MechE. Click through the tabs to see some projects I've worked on and please feel free to contact me at shruthi (at) mit (dot) edu!</p>
             </div>
-            <!-- Right Column: Image -->
             <div class="home-image">
                 <img src="https://www.dropbox.com/scl/fi/zp6fnxeg2ha7qfa0qf9tr/Ravichandran_Shruthi_Headshot-min.JPG?rlkey=1rnoznu657vdqsopm1m09ucxx&raw=1" alt="Shruthi Ravichandran">
             </div>
         </div>
     </div>
 
+
+
+    
+
     <!-- Projects Section -->
     <div id="projects" class="section">
         <h3>Projects</h3>
-        <p>This is the "Design Portfolio" section. Here you can find various projects I've worked on during my time at MIT. Click on the project links to learn more.</p>
-        <ul>
-            <li><a href="#">add projects here</a></li>
-        </ul>
+        <p>Hover over the images to see project titles. Click to learn more!</p>
+        <div class="project-item">
+            <img src="https://via.placeholder.com/250x150" alt="Project 1" onclick="openModal('modal1')">
+            <div class="project-title">Project 1</div>
+        </div>
+        <div class="project-item">
+            <img src="https://via.placeholder.com/250x150" alt="Project 2" onclick="openModal('modal2')">
+            <div class="project-title">Project 2</div>
+        </div>
     </div>
 
     <!-- Research Section -->
     <div id="research" class="section">
         <h3>Research</h3>
-        <p>This is the "Research" section. Here you can learn about the research topics I'm currently involved in, including the development of new diagnostic tools and advancements in medical technology.</p>
-        <ul>
-            <li>research</li>
+        <p>I'm passionate about using engineering to create healthcare solutions that are accessible to all. I currently work with Profs. Loza Tadesse and Giovanni Traverso at MIT. In the past, I've worked with Prof. Stathis Karathanasis at Case Western Reserve University and Prof. Jean-Pierre Raskin at UCLouvain.</p>
+        <h4>Publications</h4>
+        <ul class="no-bullets">
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/33400743/" target="_blank">Bielecki PA, Lorkowski ME, Becicka WM, Atukorale PU, Moon TJ, Zhang Y, Wiese M, Covarrubias G, <b><u>Ravichandran S</u></b>, Karathanasis E. Immunostimulatory silica nanoparticle boosts innate immunity in brain tumors. Nanoscale Horiz. 2021 Feb 1;6(2):156-167. doi: 10.1039/d0nh00446d. Epub 2021 Jan 5. PMID: 33400743; PMCID: PMC7878432.
+</a></li>
+            <li><a href="https://example.com/publication2" target="_blank">Manuscripts in Progress:</a></li>
+        </ul>
+        <h4>Patents</h4>
+        <ul class="no-bullets">
+            <li><a href="https://example.com/patent1" target="_blank">Patents (under Review):</a></li>
+        </ul>
+        <h4> Class Projects </h4>
+        <div class="project-item">
+            <img src="https://www.dropbox.com/scl/fi/4ychrfnho097msvo0ah46/Screenshot-2024-11-19-at-6.35.24-PM.png?rlkey=zgx9n453yow38fyd4f37l52hl&raw=1" alt="Cavity Resonator Glucose Sensor" onclick="openModal('modal3')">
+            <div class="project-title">Cavity Resonator Glucose Sensor</div>
+        </div>
+        <div class="project-item">
+            <img src="https://www.dropbox.com/scl/fi/b444k0ns08prgv1j4umsc/15C08CC5-5BCE-4844-900C-DACB72C14737.jpeg?rlkey=spg3z2092o5h9elvgo0elniug&raw=1" alt="Mobile Strecher" onclick="openModal('modal4')">
+            <div class="project-title">Mobile Stretcher</div>
+        </div>
+    <div class="project-item">
+            <img src="https://www.dropbox.com/scl/fi/i3qsby8d5y4as93mkfm6t/healthstation.png?rlkey=g3tuvcbbunj67zaxf934zhntw&raw=1" alt="Mobile Health Station" onclick="openModal('modal4')">
+            <div class="project-title">Mobile Health Station</div>
+        </div>
+    </div>
+    </div>
+    
+ 
+
+    <!-- Featured Section -->
+    <div id="featured" class="section">
+        <ul class="no-bullets">
+            <li><a href="https://misti.mit.edu/shruthi-ravichandran-summer-2023" target="_blank">Experience working at the National Innovation Center in Nepal</a></li>
+            <li><a href="https://misti.mit.edu/shruthi-belgium-story" target="_blank">Experience researching at UCLouvain in Belgium</a></li>
+            <li><a href="https://news.mit.edu/2024/mit-students-learn-from-crafting-a-chair-0322" target="_blank">Chair built for 4.500 class featured in MIT News</a></li>
+            <li><a href="https://design.mit.edu/news/creating-an-experience-in-4-500-design-computation" target="_blank">Chair featured in Morningside Academy of Design News</a></li>
         </ul>
     </div>
 </div>
 
-<script>
-    // Function to show the active section and hide others
-    function showSection(sectionId) {
-        // Hide all sections
-        var sections = document.querySelectorAll('.section');
-        sections.forEach(function(section) {
-            section.classList.remove('active');
-        });
-        
-        // Show the selected section
-        var activeSection = document.getElementById(sectionId);
-        activeSection.classList.add('active');
-    }
-</script>
+<!-- Modal Section -->
+<div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
+
+<div id="modal1" class="modal">
+    <button class="close-button" onclick="closeModal()">×</button>
+    <div class="modal-header">Project 1</div>
+    <div class="modal-content">
+        Detailed information about Project 1 goes here.
+    </div>
+</div>
+<div id="modal2" class="modal">
+    <button class="close-button" onclick="closeModal()">×</button>
+    <div class="modal-header">Project 2</div>
+    <div class="modal-content">
+        Detailed information about Project 2 goes here.
+    </div>
+</div>
+
+<div id="modal3" class="modal">
+    <button class="close-button" onclick="closeModal()">×</button>
+    <div class="modal-header">Cavity Resonator Glucose Sensor</div>
+    <div class="modal-content">
+        Detailed information about this research project goes here.
+    </div>
+    <button class="close-button" onclick="closeModal()">×</button>
+    <div class="modal-content">
+        <!-- PDF viewer -->
+        <iframe 
+            src="https://www.dropbox.com/scl/fi/jydnojjqw4z9r8y4xq81j/FinalPaper.pdf?rlkey=dtk6d3ctv0j6kxxjvp15nvmmy&raw=1" 
+            width="100%" 
+            height="500px" 
+            frameborder="0">
+        </iframe>
+    </div>
+</div>
+
+<div id="modal4" class="modal">
+    <button class="close-button" onclick="closeModal()">×</button>
+    <div class="modal-header">Mobile Stretcher</div>
+    <div class="modal-content">
+        Detailed information about this research project goes here.
+    </div>
+</div>
+
 
 </body>
 </html>
-
