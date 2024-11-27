@@ -156,6 +156,20 @@
             font-size: 20px;
             cursor: pointer;
         }
+        /* Ensure modal uses the same font and size as the rest of the document */
+.modal {
+    font-family: 'Poppins', sans-serif; /* Matches global font */
+    font-size: 16px; /* Matches body font size */
+    line-height: 1.5; /* Adds readability */
+    color: #000; /* Ensures text color is black or matches your design */
+}
+
+/* Adjust iframe container for consistent appearance */
+.modal-content iframe {
+    border: 1px solid #ddd; /* Optional: Border for iframe */
+    border-radius: 5px; /* Optional: Rounded corners for iframe */
+}
+
     </style>
 </head>
 <body>
@@ -190,12 +204,12 @@
         <h3>Projects</h3>
         <p>Hover over the images to see project titles. Click to learn more!</p>
         <div class="project-item">
-            <img src="https://via.placeholder.com/250x150" alt="Project 1" onclick="openModal('modal1')">
-            <div class="project-title">Project 1</div>
+            <img src="https://www.dropbox.com/scl/fi/tdzete2geb6x10ihebi63/DSC09767-1.JPG?rlkey=eykt0xcqp7ytmsgdjtj2ph2xd&raw=1" alt="Infinite Illuminance" onclick="openModal('modal1')">
+            <div class="project-title">Infinite Illuminance</div>
         </div>
         <div class="project-item">
-            <img src="https://via.placeholder.com/250x150" alt="Project 2" onclick="openModal('modal2')">
-            <div class="project-title">Project 2</div>
+            <img src="https://www.dropbox.com/scl/fi/kgn5gyv0ckh91q5bkn69f/Shruthi-Off-Track.jpg?rlkey=0tb93anp9p0nay3f8u51gvlvs&raw=1" alt="Off Track" onclick="openModal('modal2')">
+            <div class="project-title">Off Track</div>
         </div>
     </div>
 
@@ -223,7 +237,7 @@
             <div class="project-title">Mobile Stretcher</div>
         </div>
     <div class="project-item">
-            <img src="https://www.dropbox.com/scl/fi/i3qsby8d5y4as93mkfm6t/healthstation.png?rlkey=g3tuvcbbunj67zaxf934zhntw&raw=1" alt="Mobile Health Station" onclick="openModal('modal4')">
+            <img src="https://www.dropbox.com/scl/fi/i3qsby8d5y4as93mkfm6t/healthstation.png?rlkey=g3tuvcbbunj67zaxf934zhntw&raw=1" alt="Mobile Health Station" onclick="openModal('modal5')">
             <div class="project-title">Mobile Health Station</div>
         </div>
     </div>
@@ -247,24 +261,57 @@
 
 <div id="modal1" class="modal">
     <button class="close-button" onclick="closeModal()">×</button>
-    <div class="modal-header">Project 1</div>
+    <div class="modal-header">Infinite Illuminance</div>
     <div class="modal-content">
-        Detailed information about Project 1 goes here.
+        Final lamp for <a href="https://architecture.mit.edu/sites/default/files/course-documents/23fa-4.031_syll_coelho_2.pdf" target="_blank">4.031 Design Studio: Objects and Interactions</a>, taken Fall 2023. 
+    </div>
+    <button class="close-button" onclick="closeModal()">×</button>
+    <div class="modal-content">
+        <!-- PDF viewer -->
+        <iframe 
+            src="https://www.dropbox.com/scl/fi/aak19bke7pcj4zcld4gyd/Shruthi-Infinite-Illuminance-Lamp-Presentation.pdf?rlkey=n0s1ct295rphb41zwyqs4as9l&raw=1" 
+            width="100%" 
+            height="300px" 
+            frameborder="0">
+        </iframe>
     </div>
 </div>
+
 <div id="modal2" class="modal">
     <button class="close-button" onclick="closeModal()">×</button>
-    <div class="modal-header">Project 2</div>
+    <div class="modal-header">Project 1</div>
     <div class="modal-content">
-        Detailed information about Project 2 goes here.
+        <p>Final clock for <a href="https://architecture.mit.edu/sites/default/files/course-documents/23fa-4.031_syll_coelho_2.pdf" target="_blank">4.031 Design Studio: Objects and Interactions</a>, taken Fall 2023.</p>
+
+        <!-- PDF Upload via iframe -->
+        <div class="pdf-container" style="margin-top: 20px;">
+            <h4>Presentation:</h4>
+            <iframe 
+                src="https://www.dropbox.com/scl/fi/d8ru8ta0onx039jtembr7/Shruthi-Off-Track.pdf?rlkey=o231p9442mibusewlicfw96e7&raw=1" 
+                width="100%" 
+                height="300px" 
+                frameborder="0"
+                style="border: 1px solid #ddd; border-radius: 5px;">
+            </iframe>
+        </div>
+
+        <!-- Embedded MP4 Video -->
+        <div class="video-container" style="margin-top: 20px;">
+            <h4>Project Demo:</h4>
+            <video width="100%" height="auto" controls>
+                <source src="https://www.dropbox.com/scl/fi/5bqwevsa5lj3yj789xlgh/final4.031videowithoutaudio.mp4?rlkey=glunjim4w42g800t0u00ugm59&raw=1" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
 </div>
+
 
 <div id="modal3" class="modal">
     <button class="close-button" onclick="closeModal()">×</button>
     <div class="modal-header">Cavity Resonator Glucose Sensor</div>
     <div class="modal-content">
-        Detailed information about this research project goes here.
+        Final project for <a href="https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/" target="_blank">6.2300: Electromagnetic Waves and Applications</a>, taken Spring 2023. 
     </div>
     <button class="close-button" onclick="closeModal()">×</button>
     <div class="modal-content">
@@ -282,7 +329,35 @@
     <button class="close-button" onclick="closeModal()">×</button>
     <div class="modal-header">Mobile Stretcher</div>
     <div class="modal-content">
-        Detailed information about this research project goes here.
+        Final project for <a href="https://d-lab.mit.edu/academics/classes/d-lab-design">D-Lab Design</a>, taken Spring 2023. 
+    </div>
+    <button class="close-button" onclick="closeModal()">×</button>
+    <div class="modal-content">
+        <!-- PDF viewer -->
+        <iframe 
+            src="https://www.dropbox.com/scl/fi/wv7dj6pruzh88d0a26fii/BuildingInstructions.pdf?rlkey=7aqalx6g2uvtn3cdeosfvw6er&raw=1" 
+            width="100%" 
+            height="500px" 
+            frameborder="0">
+        </iframe>
+    </div>
+</div>
+
+<div id="modal5" class="modal">
+    <button class="close-button" onclick="closeModal()">×</button>
+    <div class="modal-header">Mobile Health Station</div>
+    <div class="modal-content">
+        Final project for <a href="https://meddevdesign.mit.edu/">2.75: Medical Device Design</a>, taken Spring 2024. 
+    </div>
+    <button class="close-button" onclick="closeModal()">×</button>
+    <div class="modal-content">
+        <!-- PDF viewer -->
+        <iframe 
+            src="https://www.dropbox.com/scl/fi/iku5412ihyuwapd8vv81l/2.75_HealthStation_IEEE_DraftFinalPaper.pdf?rlkey=pt0stz46antz0cogglu15mg7s&raw=1" 
+            width="100%" 
+            height="500px" 
+            frameborder="0">
+        </iframe>
     </div>
 </div>
 
