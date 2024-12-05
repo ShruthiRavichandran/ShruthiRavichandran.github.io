@@ -203,6 +203,10 @@
     <div id="projects" class="section">
         <h3>Projects</h3>
         <p>Hover over the images to see project titles. Click to learn more!</p>
+	<div class="project-item">
+            <img src="https://cdn.sanity.io/images/s7wdvm3i/production/43fc210eba2332959d7e371a1374a42ddbce3a19-4393x2804.jpg?w=2000&auto=format" alt="Cloud Chair" onclick="openModal('modal3')">
+            <div class="project-title">Cloud Chair</div>
+        </div>
         <div class="project-item">
             <img src="https://www.dropbox.com/scl/fi/tdzete2geb6x10ihebi63/DSC09767-1.JPG?rlkey=eykt0xcqp7ytmsgdjtj2ph2xd&raw=1" alt="Infinite Illuminance" onclick="openModal('modal1')">
             <div class="project-title">Infinite Illuminance</div>
@@ -211,6 +215,17 @@
             <img src="https://www.dropbox.com/scl/fi/kgn5gyv0ckh91q5bkn69f/Shruthi-Off-Track.jpg?rlkey=0tb93anp9p0nay3f8u51gvlvs&raw=1" alt="Off Track" onclick="openModal('modal2')">
             <div class="project-title">Off Track</div>
         </div>
+
+        <div class="project-item">
+            <img src="https://www.dropbox.com/scl/fi/adicftb3iecw9q71y5tv8/DSC03317.JPG?rlkey=f4wj08fw8pm840dm007tx1hc0&raw=1" alt="Mine Sweeper" onclick="openModal('modal7')">
+            <div class="project-title">Mine Sweeper</div>
+        </div>
+
+        <div class="project-item">
+            <img src="https://www.dropbox.com/scl/fi/f2uqnfbxynh0odol0ov2t/DSC04337.JPG?rlkey=n4vmlv061td5nr4r1cz7gxp1n&raw=1" alt="Ailara" onclick="openModal('modal8')">
+            <div class="project-title">Ailara</div>
+        </div>
+
     </div>
 
     <!-- Research Section -->
@@ -229,15 +244,15 @@
         </ul>
         <h4> Class Projects </h4>
         <div class="project-item">
-            <img src="https://www.dropbox.com/scl/fi/4ychrfnho097msvo0ah46/Screenshot-2024-11-19-at-6.35.24-PM.png?rlkey=zgx9n453yow38fyd4f37l52hl&raw=1" alt="Cavity Resonator Glucose Sensor" onclick="openModal('modal3')">
+            <img src="https://www.dropbox.com/scl/fi/4ychrfnho097msvo0ah46/Screenshot-2024-11-19-at-6.35.24-PM.png?rlkey=zgx9n453yow38fyd4f37l52hl&raw=1" alt="Cavity Resonator Glucose Sensor" onclick="openModal('modal4')">
             <div class="project-title">Cavity Resonator Glucose Sensor</div>
         </div>
         <div class="project-item">
-            <img src="https://www.dropbox.com/scl/fi/b444k0ns08prgv1j4umsc/15C08CC5-5BCE-4844-900C-DACB72C14737.jpeg?rlkey=spg3z2092o5h9elvgo0elniug&raw=1" alt="Mobile Strecher" onclick="openModal('modal4')">
+            <img src="https://www.dropbox.com/scl/fi/b444k0ns08prgv1j4umsc/15C08CC5-5BCE-4844-900C-DACB72C14737.jpeg?rlkey=spg3z2092o5h9elvgo0elniug&raw=1" alt="Mobile Strecher" onclick="openModal('modal5')">
             <div class="project-title">Mobile Stretcher</div>
         </div>
     <div class="project-item">
-            <img src="https://www.dropbox.com/scl/fi/i3qsby8d5y4as93mkfm6t/healthstation.png?rlkey=g3tuvcbbunj67zaxf934zhntw&raw=1" alt="Mobile Health Station" onclick="openModal('modal5')">
+            <img src="https://www.dropbox.com/scl/fi/i3qsby8d5y4as93mkfm6t/healthstation.png?rlkey=g3tuvcbbunj67zaxf934zhntw&raw=1" alt="Mobile Health Station" onclick="openModal('modal6')">
             <div class="project-title">Mobile Health Station</div>
         </div>
     </div>
@@ -307,7 +322,38 @@
 </div>
 
 
+
 <div id="modal3" class="modal">
+    <button class="close-button" onclick="closeModal()">×</button>
+    <div class="modal-header">Cloud Chair</div>
+    <div class="modal-content">
+        Final chair for <a href="https://opencw.aprende.org/courses/architecture/4-500-introduction-to-design-computing-fall-2008/" target="_blank">4.500 Design Computation</a>, taken Fall 2023. 
+    </div>
+    <button class="close-button" onclick="closeModal()">×</button>
+</div>
+
+<div id="modal7" class="modal">
+    <button class="close-button" onclick="closeModal()">×</button>
+    <div class="modal-header">Mine Sweeper</div>
+    <div class="modal-content">
+        Final 1D interface project for <a href="https://archhq.mit.edu/sites/default/files/images/Design%20Studio%20-%20Advanced%20Interactions%20-%20Syllabus%20-%20Spring%202021.pdf" target="_blank">4.043 Advanced Objects Interaction</a>, taken Spring 2024. 
+    </div>
+    <button class="close-button" onclick="closeModal()">×</button>
+</div>
+
+<div id="modal8" class="modal">
+    <button class="close-button" onclick="closeModal()">×</button>
+    <div class="modal-header">Ailara</div>
+    <div class="modal-content">
+        Final Large Language Object Project for <a href="https://archhq.mit.edu/sites/default/files/images/Design%20Studio%20-%20Advanced%20Interactions%20-%20Syllabus%20-%20Spring%202021.pdf" target="_blank">4.043 Advanced Objects Interaction</a>, taken Spring 2024. 
+    </div>
+    <button class="close-button" onclick="closeModal()">×</button>
+</div>
+
+
+
+
+<div id="modal4" class="modal">
     <button class="close-button" onclick="closeModal()">×</button>
     <div class="modal-header">Cavity Resonator Glucose Sensor</div>
     <div class="modal-content">
@@ -325,7 +371,7 @@
     </div>
 </div>
 
-<div id="modal4" class="modal">
+<div id="modal5" class="modal">
     <button class="close-button" onclick="closeModal()">×</button>
     <div class="modal-header">Mobile Stretcher</div>
     <div class="modal-content">
@@ -343,7 +389,7 @@
     </div>
 </div>
 
-<div id="modal5" class="modal">
+<div id="modal6" class="modal">
     <button class="close-button" onclick="closeModal()">×</button>
     <div class="modal-header">Mobile Health Station</div>
     <div class="modal-content">
