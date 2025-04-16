@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tunnel Game</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: sans-serif;
+    }
+    .screen {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1;
+    }
+    input, button {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    canvas {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      z-index: 0;
+    }
+    button {
+      background-color: #eee;
+      border: none;
+      border-radius: 5px;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Screen -->
+  <div id="welcome-screen" class="screen">
+    <h1>Welcome to the Tunnel Game</h1>
+    <label for="username">Enter your name:</label>
+    <input type="text" id="username" placeholder="Explorer123" maxlength="20" />
+    <button id="start-btn">Start Game</button>
+  </div>
+
+  <!-- Target Screen -->
+  <div id="target-screen" class="screen">
+    <h2 id="target-text">Target Building:</h2>
+    <p>Game starts in <span id="countdown-text">5</span>...</p>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen">
+    <canvas id="viewer-canvas"></canvas>
+    <!-- The info box will be dynamically added here by JavaScript -->
+  </div>
+
+<!-- Congrats Screen -->
+<div id="congrats-screen" class="screen">
+  <h1>🎉 Congratulations!</h1>
+  <p>You’ve reached your target building.</p>
+  <button id="replay-btn">Play Again</button>
+</div>
+
+
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.148.0/build/three.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
