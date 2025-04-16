@@ -138,6 +138,22 @@ function checkIfAtTarget() {
   }
 }
 
+function preloadNeighborImages(locationId) {
+  const neighbors = mapData[locationId]?.neighbors;
+  if (!neighbors) return;
+
+  const loader = new THREE.TextureLoader();
+  for (const direction in neighbors) {
+    const neighborId = neighbors[direction];
+    const neighborImage = mapData[neighborId]?.image;
+    if (neighborImage) {
+      loader.load(neighborImage); // just load into cache, don’t apply
+    }
+  }
+}
+
+
+
 function showCongratsScreen() {
   stopTimer();
 
@@ -211,9 +227,11 @@ function loadCurrentLocation() {
   const loc = mapData[currentLocation];
   if (!loc) return alert("Invalid location: " + currentLocation);
   load360Image(loc.image);
+  preloadNeighborImages(currentLocation); // 👈 Preload here!
   console.log(`🖼 Now viewing image: ${loc.image} at location: ${currentLocation}`);
   updateNavigationButtons();
 }
+
 
 function initThreeJS() {
   scene = new THREE.Scene();
