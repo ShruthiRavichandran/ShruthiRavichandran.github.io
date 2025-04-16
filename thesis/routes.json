@@ -1,0 +1,13 @@
+[
+    { "start": "1A", "target": "3", "route_id": "R1" },
+    { "start": "3B", "target": "4", "route_id": "R2" },
+    { "start": "10B", "target": "1", "route_id": "R3" },
+    { "start": "4C", "target": "3", "route_id": "R4" },
+    { "start": "1F", "target": "10", "route_id": "R5" },
+    { "start": "3S", "target": "4", "route_id": "R6" },
+    { "start": "4A", "target": "10", "route_id": "R7" },
+    { "start": "10D", "target": "4", "route_id": "R8" },
+    { "start": "3D", "target": "1", "route_id": "R9" },
+    { "start": "10K", "target": "3", "route_id": "R10" }
+  ]
+  

@@ -1,0 +1,338 @@
+{
+    "1A": {
+      "image": "1A.jpg",
+      "building": "1",
+      "neighbors": {
+        "west": "1B"
+      }
+    },
+    "1B": {
+      "image": "1B.jpg",
+      "building": "1",
+      "neighbors": {
+        "west": "1C",
+        "east": "1A"
+      }
+    },
+    "1C": {
+      "image": "1C.jpg",
+      "building": "1",
+      "neighbors": {
+        "west": "1D",
+        "east": "1B"
+      }
+    },
+    "1D": {
+      "image": "1D.jpg",
+      "building": "1",
+      "neighbors": {
+        "west": "1E",
+        "east": "1C"
+      }
+    },
+    "1E": {
+      "image": "1E.jpg",
+      "building": "1",
+      "neighbors": {
+        "west": "1F",
+        "east": "1D"
+      }
+    },
+    "1F": {
+      "image": "1F.jpg",
+      "building": "1",
+      "neighbors": {
+        "north": "1G",
+        "east": "1E"
+      }
+    },
+    "1G": {
+      "image": "1G.jpg",
+      "building": "1",
+      "neighbors": {
+        "north": "1H",
+        "south": "1F"
+      }
+    },
+    "1H": {
+      "image": "1H.jpg",
+      "building": "1",
+      "neighbors": {
+        "north": "1I",
+        "south": "1G"
+      }
+    },
+    "1I": {
+      "image": "1I.jpg",
+      "building": "1",
+      "neighbors": {
+        "north": "1J",
+        "south": "1H"
+      }
+    },
+    "1J": {
+      "image": "1J.jpg",
+      "building": "1",
+      "neighbors": {
+        "north": "1K",
+        "south": "1I"
+      }
+    },
+    "1K": {
+      "image": "1K.jpg",
+      "building": "1",
+      "neighbors": {
+        "east": "1L",
+        "south": "1J"
+      }
+    },
+    "1L": {
+      "image": "1L.jpg",
+      "building": "1",
+      "neighbors": {
+        "north": "1M",
+        "west": "1K"
+      }
+    },
+    "1M": {
+      "image": "1M.jpg",
+      "building": "1",
+      "neighbors": {
+        "east": "3N",
+        "south": "1L"
+      }
+    },
+    "3N": {
+      "image": "3N.jpg",
+      "building": "3",
+      "neighbors": {
+        "east": "3O",
+        "west": "1M"
+      }
+    },
+    "3O": {
+      "image": "3O.jpg",
+      "building": "3",
+      "neighbors": {
+        "east": "3P",
+        "west": "3N"
+      }
+    },
+    "3P": {
+      "image": "3P.jpg",
+      "building": "3",
+      "neighbors": {
+        "east": "3Q",
+        "west": "3O"
+      }
+    },
+    "3Q": {
+      "image": "3Q.jpg",
+      "building": "3",
+      "neighbors": {
+        "east": "3R",
+        "west": "3P"
+      }
+    },
+    "3R": {
+      "image": "3R.jpg",
+      "building": "3",
+      "neighbors": {
+        "east": "3S",
+        "west": "3Q"
+      }
+    },
+    "3S": {
+      "image": "3S.jpg",
+      "building": "3",
+      "neighbors": {
+        "west": "3R",
+        "north": "3A" 
+      } 
+    },
+    "3A": {
+      "image": "3A.jpg",
+      "building": "3",
+      "neighbors": {
+        "east": "3B",
+        "south": "3S"
+      }
+    },
+    "3B": {
+      "image": "3B.jpg",
+      "building": "3",
+      "neighbors": {
+        "west": "3A",
+        "east": "3C"
+      }
+    },
+    "3C": {
+      "image": "3C.jpg",
+      "building": "3",
+      "neighbors": {
+        "west": "3B",
+        "east": "3D"
+      }
+    },
+    "3D": {
+      "image": "3D.jpg",
+      "building": "3",
+      "neighbors": {
+        "west": "3C",
+        "east": "3E"
+      }
+    },
+    "3E": {
+      "image": "3E.jpg",
+      "building": "3",
+      "neighbors": {
+        "west": "3D",
+        "east": "3F"
+      }
+    },
+    "3F": {
+      "image": "3F.jpg",
+      "building": "3",
+      "neighbors": {
+        "west": "3E",
+        "east": "10A"
+      }
+    },
+    "10A": {
+      "image": "10A.jpg",
+      "building": "10",
+      "neighbors": {
+        "west": "3F",
+        "east": "10B"
+      }
+    },
+    "10B": {
+      "image": "10B.jpg",
+      "building": "10",
+      "neighbors": {
+        "west": "10A",
+        "east": "10G",
+        "north": "10C"
+      }
+    },
+    "10C": {
+      "image": "10C.jpg",
+      "building": "10",
+      "neighbors": {
+        "north": "10D",
+        "south": "10B"
+      }
+    },
+    "10D": {
+      "image": "10D.jpg",
+      "building": "10",
+      "neighbors": {
+        "north": "10E",
+        "south": "10C"
+      }
+    },
+    "10E": {
+      "image": "10E.jpg",
+      "building": "10",
+      "neighbors": {
+        "north": "10F",
+        "south": "10D"
+      }
+    },
+    "10F": {
+      "image": "10F.jpg",
+      "building": "10",
+      "neighbors": {
+        "south": "10E"
+      }
+    },
+    "10G": {
+      "image": "10G.jpg",
+      "building": "10",
+      "neighbors": {
+        "west": "10B",
+        "east": "10H"
+      }
+    },
+    "10H": {
+      "image": "10H.jpg",
+      "building": "10",
+      "neighbors": {
+        "west": "10G",
+        "east": "10J",
+        "north": "10I"
+      }
+    },
+    "10I": {
+      "image": "10I.jpg",
+      "building": "10",
+      "neighbors": {
+        "south": "10H"
+      }
+    },
+    "10J": {
+      "image": "10J.jpg",
+      "building": "10",
+      "neighbors": {
+        "west": "10H",
+        "east": "10K"
+      }
+    },
+    "10K": {
+      "image": "10K.jpg",
+      "building": "10",
+      "neighbors": {
+        "west": "10J",
+        "east": "10L"
+      }
+    },
+    "10L": {
+      "image": "10L.jpg",
+      "building": "10",
+      "neighbors": {
+        "west": "10K",
+        "east": "4A"
+      }
+    },
+    "4A": {
+      "image": "4A.jpg",
+      "building": "4",
+      "neighbors": {
+        "west": "10L",
+        "east": "4B"
+      }
+    },
+    "4B": {
+      "image": "4B.jpg",
+      "building": "4",
+      "neighbors": {
+        "west": "4A",
+        "east": "4C"
+      }
+    },
+    "4C": {
+      "image": "4C.jpg",
+      "building": "4",
+      "neighbors": {
+        "west": "4B",
+        "east": "4D"
+      }
+    },
+    "4D": {
+      "image": "4D.jpg",
+      "building": "4",
+      "neighbors": {
+        "west": "4C",
+        "east": "4E"
+      }
+    },
+    "4E": {
+      "image": "4E.jpg",
+      "building": "4",
+      "neighbors": {
+        "west": "4D",
+        "east": "4F"
+      }
+    }
+  }
+  
