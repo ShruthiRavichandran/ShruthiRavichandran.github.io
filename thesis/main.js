@@ -210,7 +210,7 @@ function stopTimer() {
 function loadCurrentLocation() {
   const loc = mapData[currentLocation];
   if (!loc) return alert("Invalid location: " + currentLocation);
-  load360Image(`https://tunnel-public.shruthi-ravichandran.workers.dev/${loc.image}`);
+  load360Image(`https://tunnels.shruthi-ravichandran.workers.dev/${loc.image}`);
   console.log(`🖼 Now viewing image: ${loc.image} at location: ${currentLocation}`);
   updateNavigationButtons();
 }
