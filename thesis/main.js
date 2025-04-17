@@ -410,19 +410,7 @@ function setupNavigationButtons() {
 
   document.body.appendChild(controlPanel);
 
-  window.addEventListener("keydown", (e) => {
-    const keyMap = {
-      ArrowUp: "forward",
-      ArrowDown: "backward",
-      ArrowLeft: "left",
-      ArrowRight: "right"
-    };
-    const input = keyMap[e.key];
-    if (input) {
-      const abs = getRelativeDirections()[input];
-      move(abs);
-    }
-  });
+
 }
 
 function setupOrientationDisplay() {
