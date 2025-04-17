@@ -43,18 +43,20 @@ window.addEventListener("keydown", (e) => {
     ArrowRight: "right"
   };
 
-  const input = keyMap[e.key];
-  if (input && !pressedKeys.has(e.key)) {
-    pressedKeys.add(e.key);
-    const abs = getRelativeDirections()[input];
-    console.log("⌨️ Key down:", e.key, "→ absolute:", abs);
+  if (keyMap[e.key] && !pressedKeys[e.key]) {
+    pressedKeys[e.key] = true;
+    const abs = getRelativeDirections()[keyMap[e.key]];
     move(abs);
   }
 });
 
+
 window.addEventListener("keyup", (e) => {
-  pressedKeys.delete(e.key);
+  if (pressedKeys[e.key]) {
+    pressedKeys[e.key] = false;
+  }
 });
+
 
 
 
