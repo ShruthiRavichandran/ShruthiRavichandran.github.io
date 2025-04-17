@@ -24,14 +24,23 @@ let scene, camera, renderer, sphere, isDragging = false, lastX = 0, lastY = 0;
 let currentYaw = 0;
 let directionButtons = {};
 
-window.addEventListener("load", async () => {
-  welcomeScreen.style.display = "flex";
-  targetScreen.style.display = "none";
-  gameScreen.style.display = "none";
-  congratsScreen.style.display = "none";
-  await loadRoutes();
-  await loadMap();
+window.addEventListener("keydown", (e) => {
+  const keyMap = {
+    ArrowUp: "forward",
+    ArrowDown: "backward",
+    ArrowLeft: "left",
+    ArrowRight: "right"
+  };
+
+  const input = keyMap[e.key];
+  if (input) {
+    e.preventDefault();        // Prevent default page scroll
+    if (e.repeat) return;      // Ignore held keys (repeated keydown events)
+    const abs = getRelativeDirections()[input];
+    move(abs);
+  }
 });
+
 
 startButton.addEventListener("click", () => {
   const name = document.getElementById("username").value.trim();
