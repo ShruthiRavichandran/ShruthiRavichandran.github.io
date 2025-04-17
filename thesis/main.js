@@ -25,6 +25,16 @@ let currentYaw = 0;
 let directionButtons = {};
 const pressedKeys = new Set();
 
+window.addEventListener("load", async () => {
+  welcomeScreen.style.display = "flex";
+  targetScreen.style.display = "none";
+  gameScreen.style.display = "none";
+  congratsScreen.style.display = "none";
+  await loadRoutes();
+  await loadMap();
+});
+
+
 window.addEventListener("keydown", (e) => {
   const keyMap = {
     ArrowUp: "forward",
