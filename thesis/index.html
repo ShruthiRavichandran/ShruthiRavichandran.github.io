@@ -63,15 +63,24 @@
 <!-- Congrats Screen -->
 <div id="congrats-screen" class="screen">
   <h1>🎉 Congratulations!</h1>
-  <p>You’ve reached your target building.</p>
+  <p id="congrats-summary"></p>
+
+  <h3>🏆 Top 5 for this route</h3>
+  <div id="route-leaderboard">Loading...</div>
+
+  <button id="full-leaderboard-btn">See Full Leaderboard</button>
   <button id="replay-btn">Play Again</button>
 </div>
 
 
 
 
+
+
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.148.0/build/three.min.js"></script>
-  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script type="module" src="main.js"></script>
+
 </body>
 </html>
