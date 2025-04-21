@@ -99,7 +99,8 @@
     "building": "1",
     "neighbors": {
       "east": "3N",
-      "south": "1L"
+      "south": "1L",
+      "north": "1Z"
     }
   },
   "3N": {
@@ -110,12 +111,28 @@
       "west": "1M"
     }
   },
+  "1Z": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/1Z.JPG",
+    "building": "1",
+    "neighbors": {
+      "south": "1M",
+      "north": "1Y"
+    }
+  },
   "3O": {
     "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/3O.JPG",
     "building": "3",
     "neighbors": {
       "east": "3P",
       "west": "3N"
+    }
+  },
+  "1Y": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/1Y.JPG",
+    "building": "1",
+    "neighbors": {
+      "south": "1Z",
+      "north": "1X"
     }
   },
   "3P": {
@@ -126,12 +143,28 @@
       "west": "3O"
     }
   },
+  "1X": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/1X.JPG",
+    "building": "1",
+    "neighbors": {
+      "south": "1Y",
+      "north": "5A"
+    }
+  },
   "3Q": {
     "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/3Q.JPG",
     "building": "3",
     "neighbors": {
       "east": "3R",
       "west": "3P"
+    }
+  },
+  "5A": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5A.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "1X",
+      "north": "5B"
     }
   },
   "3R": {
@@ -142,12 +175,187 @@
       "west": "3Q"
     }
   },
+  "5B": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5B.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "5A",
+      "north": "5C"
+    }
+  },
   "3S": {
     "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/3S.JPG",
     "building": "3",
     "neighbors": {
-      "west": "3R",
-      "north": "3A"
+      "west": "3R"
+    }
+  },
+  "5C": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5C.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "5B",
+      "north": "5D"
+    }
+  },
+  "5D": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5D.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "5C",
+      "north": "5E"
+    }
+  },
+  "5E": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5E.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "5D",
+      "north": "5F"
+    }
+  },
+  "5F": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5F.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "5E",
+      "north": "5G"
+    }
+  },
+  "5G": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5G.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "5F",
+      "north": "5H"
+    }
+  },
+  "5H": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5H.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "5G",
+      "north": "5I"
+    }
+  },
+  "5I": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5I.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "5H",
+      "north": "5J"
+    }
+  },
+  "5J": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5J.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "5I",
+      "north": "5K"
+    }
+  },
+  "5K": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5K.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "5J",
+      "north": "5L"
+    }
+  },
+  "5L": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5L.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "5K",
+      "north": "5M"
+    }
+  },
+  "5M": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/5M.JPG",
+    "building": "5",
+    "neighbors": {
+      "south": "5L",
+      "north": "7A"
+    }
+  },
+  "7A": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/7A.JPG",
+    "building": "7",
+    "neighbors": {
+      "south": "5M",
+      "north": "7B"
+    }
+  },
+  "7B": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/7B.JPG",
+    "building": "7",
+    "neighbors": {
+      "south": "7A",
+      "north": "7C",
+      "east": "7F"
+    }
+  },
+  "7C": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/7C.JPG",
+    "building": "7",
+    "neighbors": {
+      "south": "7B",
+      "north": "7D"
+    }
+  },
+  "7F": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/7F.JPG",
+    "building": "7",
+    "neighbors": {
+      "west": "7B",
+      "east": "7G"
+    }
+  },
+  "7D": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/7D.JPG",
+    "building": "7",
+    "neighbors": {
+      "south": "7C",
+      "north": "7E"
+    }
+  },
+  "7G": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/7G.JPG",
+    "building": "7",
+    "neighbors": {
+      "west": "7F",
+      "east": "7H"
+    }
+  },
+  "7E": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/7E.JPG",
+    "building": "7",
+    "neighbors": {
+      "south": "7D"
+    }
+  },
+  "7H": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/7H.JPG",
+    "building": "7",
+    "neighbors": {
+      "west": "7G",
+      "east": "7I"
+    }
+  },
+  "7I": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/7I.JPG",
+    "building": "7",
+    "neighbors": {
+      "west": "7H",
+      "east": "7J"
+    }
+  },
+  "7J": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/7J.JPG",
+    "building": "7",
+    "neighbors": {
+      "west": "7I",
+      "east": "3A"
     }
   },
   "3A": {
@@ -155,7 +363,7 @@
     "building": "3",
     "neighbors": {
       "east": "3B",
-      "south": "3S"
+      "west": "7J"
     }
   },
   "3B": {
@@ -215,43 +423,20 @@
       "north": "10C"
     }
   },
-  "10C": {
-    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10C.JPG",
-    "building": "10",
-    "neighbors": {
-      "north": "10D",
-      "south": "10B"
-    }
-  },
-  "10D": {
-    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10D.JPG",
-    "building": "10",
-    "neighbors": {
-      "north": "10E",
-      "south": "10C"
-    }
-  },
-  "10E": {
-    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10E.JPG",
-    "building": "10",
-    "neighbors": {
-      "north": "10F",
-      "south": "10D"
-    }
-  },
-  "10F": {
-    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10F.JPG",
-    "building": "10",
-    "neighbors": {
-      "south": "10E"
-    }
-  },
   "10G": {
     "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10G.JPG",
     "building": "10",
     "neighbors": {
       "west": "10B",
       "east": "10H"
+    }
+  },
+  "10C": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10C.JPG",
+    "building": "10",
+    "neighbors": {
+      "north": "10D",
+      "south": "10B"
     }
   },
   "10H": {
@@ -263,11 +448,12 @@
       "north": "10I"
     }
   },
-  "10I": {
-    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10I.JPG",
+  "10D": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10D.JPG",
     "building": "10",
     "neighbors": {
-      "south": "10H"
+      "north": "10E",
+      "south": "10C"
     }
   },
   "10J": {
@@ -278,12 +464,35 @@
       "east": "10K"
     }
   },
+  "10I": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10I.JPG",
+    "building": "10",
+    "neighbors": {
+      "south": "10H"
+    }
+  },
+  "10E": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10E.JPG",
+    "building": "10",
+    "neighbors": {
+      "north": "10F",
+      "south": "10D"
+    }
+  },
   "10K": {
     "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10K.JPG",
     "building": "10",
     "neighbors": {
       "west": "10J",
       "east": "10L"
+    }
+  },
+  "10F": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10F.JPG",
+    "building": "10",
+    "neighbors": {
+      "south": "10E",
+      "north": "10Y"
     }
   },
   "10L": {
@@ -332,6 +541,204 @@
     "neighbors": {
       "west": "4D",
       "east": "4F"
+    }
+  },
+  "4F": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/4F.JPG",
+    "building": "4",
+    "neighbors": {
+      "west": "4E"
+    }
+  },
+  "9A": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/9A.JPG",
+    "building": "9",
+    "neighbors": {
+      "east": "9B"
+    }
+  },
+  "9B": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/9B.JPG",
+    "building": "9",
+    "neighbors": {
+      "west": "9A",
+      "east": "9C"
+    }
+  },
+  "9C": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/9C.JPG",
+    "building": "9",
+    "neighbors": {
+      "west": "9B",
+      "east": "9D"
+    }
+  },
+  "9D": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/9D.JPG",
+    "building": "9",
+    "neighbors": {
+      "west": "9C",
+      "south": "9E"
+    }
+  },
+  "9E": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/9E.JPG",
+    "building": "9",
+    "neighbors": {
+      "north": "9D",
+      "south": "9F"
+    }
+  },
+  "9F": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/9F.JPG",
+    "building": "9",
+    "neighbors": {
+      "north": "9E",
+      "south": "9G"
+    }
+  },
+  "9G": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/9G.JPG",
+    "building": "9",
+    "neighbors": {
+      "west": "9F",
+      "east": "9H"
+    }
+  },
+  "9H": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/9H.JPG",
+    "building": "9",
+    "neighbors": {
+      "west": "9G",
+      "east": "9I"
+    }
+  },
+  "9I": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/9I.JPG",
+    "building": "9",
+    "neighbors": {
+      "west": "9H",
+      "east": "13A"
+    }
+  },
+  "13A": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13A.JPG",
+    "building": "13",
+    "neighbors": {
+      "west": "9I",
+      "east": "13B"
+    }
+  },
+  "13B": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13B.JPG",
+    "building": "13",
+    "neighbors": {
+      "west": "13A",
+      "east": "13C"
+    }
+  },
+  "13C": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13C.JPG",
+    "building": "13",
+    "neighbors": {
+      "west": "13B",
+      "east": "13D"
+    }
+  },
+  "13D": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13D.JPG",
+    "building": "13",
+    "neighbors": {
+      "west": "13C",
+      "east": "13E"
+    }
+  },
+  "13E": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13E.JPG",
+    "building": "13",
+    "neighbors": {
+      "west": "13D",
+      "east": "13F"
+    }
+  },
+  "13F": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13F.JPG",
+    "building": "13",
+    "neighbors": {
+      "west": "13E",
+      "east": "13G"
+    }
+  },
+  "13G": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13G.JPG",
+    "building": "13",
+    "neighbors": {
+      "west": "13F",
+      "east": "13H"
+    }
+  },
+  "13H": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13H.JPG",
+    "building": "13",
+    "neighbors": {
+      "west": "13G",
+      "east": "13I"
+    }
+  },
+  "13I": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13I.JPG",
+    "building": "13",
+    "neighbors": {
+      "west": "13H",
+      "east": "13J"
+    }
+  },
+  "13J": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13J.JPG",
+    "building": "13",
+    "neighbors": {
+      "west": "13I",
+      "south": "13K"
+    }
+  },
+  "13K": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13K.JPG",
+    "building": "13",
+    "neighbors": {
+      "north": "13J",
+      "south": "13L"
+    }
+  },
+  "13L": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13L.JPG",
+    "building": "13",
+    "neighbors": {
+      "north": "13K",
+      "south": "13M"
+    }
+  },
+  "13M": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/13M.JPG",
+    "building": "13",
+    "neighbors": {
+      "north": "13L",
+      "south": "10Z"
+    }
+  },
+  "10Z": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10Z.JPG",
+    "building": "10",
+    "neighbors": {
+      "north": "13M",
+      "south": "10Y"
+    }
+  },
+  "10Y": {
+    "image": "https://tunnel-public.shruthi-ravichandran.workers.dev/10Y.JPG",
+    "building": "10",
+    "neighbors": {
+      "west": "10F",
+      "north": "10Z"
     }
   }
 }
