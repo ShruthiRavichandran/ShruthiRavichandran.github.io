@@ -1,3 +1,12 @@
+
+//const supabaseUrl = 'https://jimxipnaggvxhtilxego.supabase.co';
+//const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppbXhpcG5hZ2d2eGh0aWx4ZWdvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ4NTUwNjUsImV4cCI6MjA2MDQzMTA2NX0.5-kIxi00Hz3Syyd0PpdarPW7jo4tqQ8hTD3yS8DmvZ4';
+const supabase = window.supabase.createClient(
+  'https://jimxipnaggvxhtilxego.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppbXhpcG5hZ2d2eGh0aWx4ZWdvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ4NTUwNjUsImV4cCI6MjA2MDQzMTA2NX0.5-kIxi00Hz3Syyd0PpdarPW7jo4tqQ8hTD3yS8DmvZ4'
+);
+
+
 let username = "";
 let countdown = 5;
 let routes = [];
@@ -5,8 +14,10 @@ let selectedRoute = null;
 let currentLocation = null;
 let mapData = {};
 let moveCount = 0;
+let pathHistoryArray = [];
 let timer = 0;
 let timerInterval = null;
+let gameActive = false;
 let gameHistory = {};
 
 
@@ -24,6 +35,7 @@ let scene, camera, renderer, sphere, isDragging = false, lastX = 0, lastY = 0;
 let currentYaw = 0;
 let directionButtons = {};
 const pressedKeys = new Set();
+let testerMode = false; // Flag to check if in tester mode
 
 window.addEventListener("load", async () => {
   welcomeScreen.style.display = "flex";
@@ -32,10 +44,31 @@ window.addEventListener("load", async () => {
   congratsScreen.style.display = "none";
   await loadRoutes();
   await loadMap();
+
+  if (testerMode) {
+    startGameAtNode9A(); // Start directly at node 9A in tester mode
+  }
+
 });
 
 
+function startGameAtNode9A() {
+  username = "Tester"; // Set username to "Tester" or any name you want
+  selectedRoute = routes[0]; // Pick the first route, or specify a custom route
+  currentLocation = "9A"; // Start directly at node 9A
+  showGameScreen(); // Skip the welcome screen and countdown
+  
+  // Optional: Simulate automatic clicks through the game
+  setTimeout(() => {
+    move("forward"); // Move in a predefined direction, you can chain more moves
+    setTimeout(() => move("right"), 1000); // Move after 1 second
+    // Add more steps if needed...
+  }, 1000); // Start after 1 second
+}
+
+
 window.addEventListener("keydown", (e) => {
+  if (!gameActive) return;
   const keyMap = {
     ArrowUp: "forward",
     ArrowDown: "backward",
@@ -124,29 +157,36 @@ function showTargetScreen() {
 function showGameScreen() {
   targetScreen.style.display = "none";
   gameScreen.style.display = "flex";
+  moveCount = 0;
+  timer = 0;
+  pathHistoryArray = [];
+
   initThreeJS();
   loadCurrentLocation();
   setupNavigationButtons();
   setupOrientationDisplay();
-  setupInfoBox();
-  moveCount = 0;
-  timer = 0;
-  startTimer();
+  setupInfoBox(); // ✅ Make sure UI is ready BEFORE the timer
+  gameActive = true;
+  startTimer(); // ✅ Only start once UI is ready
 }
+
 
 function resetGame() {
   moveCount = 0;
   timer = 0;
+  pathHistoryArray = []; // ✅ clear old path
   currentLocation = null;
   selectedRoute = null;
   pickRandomRoute();
   showTargetScreen();
 }
 
+
 function move(direction) {
   const current = mapData[currentLocation];
   if (current.neighbors && current.neighbors[direction]) {
     currentLocation = current.neighbors[direction];
+    pathHistoryArray.push(currentLocation); // ✅ track each step
     moveCount++;
     console.log("➡️ Moved to:", currentLocation);
     loadCurrentLocation();
@@ -156,6 +196,7 @@ function move(direction) {
     console.log("🚫 Can't move", direction, "from", currentLocation);
   }
 }
+
 
 function checkIfAtTarget() {
   const currentBuilding = mapData[currentLocation]?.building?.toLowerCase();
@@ -181,26 +222,24 @@ function preloadNeighborImages(locationId) {
 
 
 
-function showCongratsScreen() {
+async function showCongratsScreen() {
   stopTimer();
-
-  if (!gameHistory[username]) {
-    gameHistory[username] = [];
-  }
-  
-  gameHistory[username].push({
-    route: {
-      start: selectedRoute.start,
-      target: selectedRoute.target,
-    },
+  gameActive = false;
+  const lastGame = {
+    username,
+    start: selectedRoute.start,
+    target: selectedRoute.target,
     moves: moveCount,
-    time: timer,
-    timestamp: new Date().toISOString()
-  });
-  
-  console.log("📚 Game history for", username, gameHistory[username]);
+    time_sec: timer,
+    path: pathHistoryArray,
+  };
+
+  // Save to Supabase
+  const { error } = await supabase.from("leaderboard").insert([lastGame]);
+  if (error) console.error("❌ Error inserting into leaderboard:", error);
   
 
+  // UI updates
   welcomeScreen.style.display = "none";
   targetScreen.style.display = "none";
   gameScreen.style.display = "none";
@@ -210,32 +249,115 @@ function showCongratsScreen() {
   const controlPanel = document.querySelector("div[style*='grid']");
   if (controlPanel) controlPanel.remove();
 
-  const targetBase = selectedRoute.target.replace(/[^a-zA-Z0-9]/g, "");
-  const messageParagraphs = congratsScreen.querySelectorAll("p");
+  const startBuilding = getBuildingName(selectedRoute.start);
+  const targetBuilding = getBuildingName(selectedRoute.target);
+  
+  document.getElementById("congrats-summary").innerText =
+    `You took ${moveCount} moves and ${formatTime(timer)} from building ${startBuilding} to building ${targetBuilding}.`;
+  
 
-  if (messageParagraphs[0]) {
-    messageParagraphs[0].innerText = `You’ve reached building ${targetBase}!`;
-  }
-
-  let timeSummary = "";
-  if (timer < 60) {
-    timeSummary = `${timer} seconds`;
-  } else {
-    const mins = Math.floor(timer / 60);
-    const secs = timer % 60;
-    timeSummary = `${mins} minute${mins > 1 ? "s" : ""} and ${secs} second${secs !== 1 ? "s" : ""}`;
-  }
-
-  if (messageParagraphs[1]) {
-    messageParagraphs[1].innerText = `You took ${moveCount} moves and ${timeSummary}.`;
-  } else {
-    const summary = document.createElement("p");
-    summary.innerText = `You took ${moveCount} moves and ${timeSummary}.`;
-    congratsScreen.appendChild(summary);
-  }
+  await fetchRouteLeaderboard(selectedRoute.start, selectedRoute.target);
 
   congratsScreen.style.display = "flex";
+
+  document.getElementById("replay-btn").onclick = () => resetGame();
+  document.getElementById("full-leaderboard-btn").onclick = () => {
+    alert("Coming soon: full leaderboard view!");
+  };
 }
+
+async function fetchRouteLeaderboard(start, target) {
+  const container = document.getElementById("route-leaderboard");
+  container.innerText = "Loading...";
+
+  const { data, error } = await supabase
+    .from("leaderboard")
+    .select("*")
+    .eq("start", start)
+    .eq("target", target)
+    .order("time_sec", { ascending: true })
+    .limit(5);
+
+  if (error) {
+    container.innerText = "Error loading route leaderboard.";
+    console.error("❌", error);
+    return;
+  }
+
+  if (!data.length) {
+    container.innerText = "No entries yet for this route.";
+    return;
+  }
+
+  const rows = data.map(row => `
+    <tr>
+      <td>${row.username}</td>
+      <td>${row.moves}</td>
+      <td>${formatTime(row.time_sec)}</td>
+    </tr>
+  `).join("");
+
+  container.innerHTML = `
+    <table style="margin-top:10px; border-collapse: collapse; width: 100%;">
+      <thead>
+        <tr><th>Player</th><th>Moves</th><th>Time</th></tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+}
+
+
+async function fetchAndDisplayLeaderboard() {
+  const leaderboardContainer = document.getElementById("leaderboard-container");
+
+  const { data, error } = await supabase
+    .from("leaderboard")
+    .select("*")
+    .order("time_sec", { ascending: true })
+    .limit(10);
+
+  if (error) {
+    leaderboardContainer.innerText = "Error loading leaderboard.";
+    console.error("❌ Failed to fetch leaderboard:", error);
+    return;
+  }
+
+  if (!data || data.length === 0) {
+    leaderboardContainer.innerText = "No entries yet!";
+    return;
+  }
+
+  const table = document.createElement("table");
+  table.style.marginTop = "10px";
+  table.style.borderCollapse = "collapse";
+  table.style.width = "100%";
+  table.innerHTML = `
+    <tr>
+      <th>Player</th>
+      <th>Start</th>
+      <th>Target</th>
+      <th>Moves</th>
+      <th>Time</th>
+    </tr>
+    ${data
+      .map(
+        (row) => `
+      <tr>
+        <td>${row.username}</td>
+        <td>${row.start}</td>
+        <td>${row.target}</td>
+        <td>${row.moves}</td>
+        <td>${formatTime(row.time_sec)}</td>
+      </tr>`
+      )
+      .join("")}
+  `;
+
+  leaderboardContainer.innerHTML = "";
+  leaderboardContainer.appendChild(table);
+}
+
 
 function startTimer() {
   timer = 0;
@@ -248,6 +370,7 @@ function startTimer() {
 
 function stopTimer() {
   clearInterval(timerInterval);
+  timerInterval = null;
 }
 
 function loadCurrentLocation() {
@@ -331,6 +454,12 @@ function load360Image(path) {
     }
   );
 }
+
+function getBuildingName(locationId) {
+  const location = mapData[locationId];
+  return location?.building || locationId;
+}
+
 
 function getRelativeDirections() {
   const yaw = currentYaw;
@@ -464,12 +593,15 @@ function setupInfoBox() {
 }
 
 function updateInfoBox() {
+  console.log("🔄 Updating UI — Moves:", moveCount, "Time:", timer);
+
   const moveText = document.getElementById("move-count-text");
   if (moveText) moveText.innerText = `Moves: ${moveCount}`;
 
   const timerText = document.getElementById("timer-text");
   if (timerText) timerText.innerText = `Time: ${formatTime(timer)}`;
 }
+
 
 function formatTime(seconds) {
   const mins = Math.floor(seconds / 60);
