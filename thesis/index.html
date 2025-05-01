@@ -40,12 +40,30 @@
 </head>
 <body>
 
+  
+
   <!-- Welcome Screen -->
   <div id="welcome-screen" class="screen">
-    <h1>Welcome to the Tunnel Game</h1>
-    <label for="username">Enter your name:</label>
-    <input type="text" id="username" placeholder="Explorer123" maxlength="20" />
-    <button id="start-btn">Start Game</button>
+    <h1 style="font-size: 3rem; margin-bottom: 20px;">Welcome to Tunnel Racing!</h1>
+<div id="instructions" style="max-width: 600px; text-align: center; font-size: 1.1rem; margin-bottom: 30px;">
+  <p>You will be dropped into a random location in the tunnels and have a target building to reach.</p>
+  <p>Use your mouse to drag around the screen to see the full 360 view of your location and use the arrow keys to move forward, backward, left, and right.</p>
+  <p>Race to the target building as fast as possible!</p>
+</div>
+<div style="text-align: center; margin-top: 40px;">
+  <label for="username" style="font-size: 1.1rem; margin-bottom: 10px;">Pick a Username:</label>
+  <br />
+  <input type="text" id="username" placeholder="Explorer123" maxlength="20" style="padding: 10px; font-size: 1.1rem; margin-bottom: 20px; width: 250px;"/>
+  <br />
+  <button id="start-btn" style="background-color: #007BFF; color: white; padding: 12px 20px; font-size: 1.2rem; border: none; border-radius: 5px;">Start Game</button>
+  <br />
+  <div id="footer" style="font-size: 0.9rem; text-align: center; color: #ccc; margin-top: 30px;">
+    <p>This game was made with love for my Art and Design thesis project! I have never built a website or game before, so please excuse any bugs!</p>
+    <p>If you have any suggestions for how to improve or find any bugs, please submit them here and I will try my best to fix them!</p>
+  </div>
+  <button id="feedback-button" style="background-color: #FFB400; color: white; padding: 10px 15px; font-size: 1.1rem; border: none; border-radius: 5px; margin-top: 20px;" onclick="window.open('https://forms.gle/nEPf43S7SwL7RFhz7', '_blank')">Submit Feedback</button>
+</div>
+
   </div>
 
   <!-- Target Screen -->
@@ -57,6 +75,25 @@
   <!-- Game Screen -->
   <div id="game-screen" class="screen">
     <canvas id="viewer-canvas"></canvas>
+<!-- Question Mark Button (Overlay) -->
+<div id="instructions-button" style="position: fixed; bottom: 20px; left: 20px; background-color: #FFB400; border-radius: 50%; padding: 15px; font-size: 2rem; color: white; cursor: pointer; z-index: 9999;">
+  ?
+</div>
+
+
+<!-- Instructions Overlay (Hidden initially) -->
+<div id="instructions-overlay" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; display: none; flex-direction: column; justify-content: center; align-items: center; text-align: center; z-index: 9999;">
+  <h2>Game Instructions</h2>
+  <p>You will be dropped into a random location in the tunnels and have a target building to reach.</p>
+  <p>Use your mouse to drag around the screen to see the full 360 view of your location and use the arrow keys to move forward, backward, left, and right.</p>
+  <p>Race to the target building as fast as possible!</p>
+  <br />
+  <p>This game was made with love for my Art and Design thesis project! I have never built a website or game before, so please excuse any bugs!</p>
+  <p>If you have any suggestions for how to improve or find any bugs, please submit them <a href="https://forms.gle/nEPf43S7SwL7RFhz7" target="_blank" style="color: #FFB400;">here</a> and I will try my best to fix them!</p>
+  <button onclick="closeInstructions()" style="background-color: #007BFF; color: white; padding: 10px 15px; font-size: 1.2rem; border: none; border-radius: 5px; margin-top: 20px;">Close</button>
+</div>
+
+
     <!-- The info box will be dynamically added here by JavaScript -->
   </div>
 
@@ -68,7 +105,6 @@
   <h3>🏆 Top 5 for this route</h3>
   <div id="route-leaderboard">Loading...</div>
 
-  <button id="full-leaderboard-btn">See Full Leaderboard</button>
   <button id="replay-btn">Play Again</button>
 </div>
 
