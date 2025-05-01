@@ -127,6 +127,56 @@ async function loadMap() {
   }
 }
 
+let timerPaused = false; // Flag to check if timer is paused
+
+window.addEventListener("load", () => {
+  const instructionsButton = document.getElementById("instructions-button");
+  const instructionsOverlay = document.getElementById("instructions-overlay");
+
+  // Ensure the function is available when the button is clicked
+  const closeBtn = document.querySelector("#instructions-overlay button");
+  closeBtn.onclick = () => closeInstructions();
+
+  // Show the button after the game starts
+  instructionsButton.style.display = "block";
+
+  // Click event to show instructions overlay
+  instructionsButton.addEventListener("click", () => {
+    if (!timerPaused) {
+      pauseTimer(); // Pause the timer when instructions are opened
+    }
+    instructionsOverlay.style.display = "flex"; // Show the overlay with instructions
+  });
+});
+
+
+// Close instructions overlay and resume the timer
+function closeInstructions() {
+  const instructionsOverlay = document.getElementById("instructions-overlay");
+  instructionsOverlay.style.display = "none"; // Hide the instructions
+
+  if (timerPaused) {
+    resumeTimer(); // Resume the timer if it was paused
+  }
+}
+
+// Pause the timer
+function pauseTimer() {
+  if (!timerPaused) {
+    stopTimer(); // Stop the existing timer
+    timerPaused = true; // Mark the timer as paused
+  }
+}
+
+// Resume the timer
+function resumeTimer() {
+  if (timerPaused) {
+    startTimer(); // Start the timer again
+    timerPaused = false; // Mark the timer as running
+  }
+}
+
+
 function pickRandomRoute() {
   selectedRoute = routes[Math.floor(Math.random() * routes.length)];
   currentLocation = selectedRoute.start;
@@ -165,9 +215,9 @@ function showGameScreen() {
   loadCurrentLocation();
   setupNavigationButtons();
   setupOrientationDisplay();
-  setupInfoBox(); // ✅ Make sure UI is ready BEFORE the timer
+  setupInfoBox();  // Ensure UI is ready before starting the timer
   gameActive = true;
-  startTimer(); // ✅ Only start once UI is ready
+  startTimer();     // Start the timer once the UI is ready
 }
 
 
@@ -186,12 +236,13 @@ function move(direction) {
   const current = mapData[currentLocation];
   if (current.neighbors && current.neighbors[direction]) {
     currentLocation = current.neighbors[direction];
-    pathHistoryArray.push(currentLocation); // ✅ track each step
+    pathHistoryArray.push(currentLocation); // Track each step
     moveCount++;
     console.log("➡️ Moved to:", currentLocation);
-    loadCurrentLocation();
-    updateInfoBox();
-    checkIfAtTarget();
+    
+    loadCurrentLocation();  // Load the new location
+    updateInfoBox();        // Ensure the move count and time are updated
+    checkIfAtTarget();      // Check if the player has reached the target
   } else {
     console.log("🚫 Can't move", direction, "from", currentLocation);
   }
@@ -261,9 +312,6 @@ async function showCongratsScreen() {
   congratsScreen.style.display = "flex";
 
   document.getElementById("replay-btn").onclick = () => resetGame();
-  document.getElementById("full-leaderboard-btn").onclick = () => {
-    alert("Coming soon: full leaderboard view!");
-  };
 }
 
 async function fetchRouteLeaderboard(start, target) {
@@ -360,11 +408,17 @@ async function fetchAndDisplayLeaderboard() {
 
 
 function startTimer() {
+  if (timerInterval) {
+    clearInterval(timerInterval); // Clear any existing interval
+  }
+  
   timer = 0;
-  updateInfoBox();
+  updateInfoBox(); // Immediately update the info box to show 0s for the timer and move count
   timerInterval = setInterval(() => {
-    timer++;
-    updateInfoBox();
+    if (gameActive) {
+      timer++;
+      updateInfoBox(); // Update the UI every second
+    }
   }, 1000);
 }
 
@@ -593,6 +647,7 @@ function setupInfoBox() {
 }
 
 function updateInfoBox() {
+  // Update UI elements for move count and timer
   console.log("🔄 Updating UI — Moves:", moveCount, "Time:", timer);
 
   const moveText = document.getElementById("move-count-text");
@@ -601,7 +656,6 @@ function updateInfoBox() {
   const timerText = document.getElementById("timer-text");
   if (timerText) timerText.innerText = `Time: ${formatTime(timer)}`;
 }
-
 
 function formatTime(seconds) {
   const mins = Math.floor(seconds / 60);
