@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shruthi Ravichandran</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
@@ -90,6 +93,7 @@
             height: 150px;
             object-fit: cover;
             border-radius: 10px;
+            cursor: pointer;
         }
 
         .project-title {
@@ -111,6 +115,56 @@
             opacity: 1;
         }
 
+        /* Publication & Research Item Layout */
+        .publication-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .paper-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            background-color: #f5f5f5;
+            flex-shrink: 0;
+        }
+
+        .paper-details {
+            flex-grow: 1;
+        }
+
+        .paper-title {
+            font-weight: 600;
+            font-size: 1.05em;
+            margin-bottom: 4px;
+            color: #001f3f;
+        }
+
+        .paper-title a {
+            text-decoration: none;
+            color: #001f3f;
+        }
+
+        .paper-title a:hover {
+            text-decoration: underline;
+        }
+
+        .paper-authors {
+            font-size: 0.95em;
+            color: #444;
+            margin-bottom: 4px;
+        }
+
+        .paper-meta {
+            font-size: 0.85em;
+            color: #666;
+            font-style: italic;
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -124,6 +178,10 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 80%;
             max-width: 500px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #000;
         }
 
         .modal-overlay {
@@ -147,6 +205,11 @@
             font-size: 16px;
         }
 
+        .modal-content iframe {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
         .close-button {
             position: absolute;
             top: 10px;
@@ -156,20 +219,27 @@
             font-size: 20px;
             cursor: pointer;
         }
-        /* Ensure modal uses the same font and size as the rest of the document */
-.modal {
-    font-family: 'Poppins', sans-serif; /* Matches global font */
-    font-size: 16px; /* Matches body font size */
-    line-height: 1.5; /* Adds readability */
-    color: #000; /* Ensures text color is black or matches your design */
-}
 
-/* Adjust iframe container for consistent appearance */
-.modal-content iframe {
-    border: 1px solid #ddd; /* Optional: Border for iframe */
-    border-radius: 5px; /* Optional: Rounded corners for iframe */
-}
-
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .publication-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .paper-image {
+                width: 100%;
+                height: 160px;
+            }
+            .home-container {
+                flex-direction: column;
+            }
+            .home-text, .home-image {
+                width: 100%;
+            }
+            .home-image {
+                margin-top: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -187,7 +257,7 @@
         <div class="home-container">
             <div class="home-text">
                 <h3>Shruthi Ravichandran</h3>
-                <p>Hi! I'm Shruthi, a second-year PhD student at <a href="https://eecs.berkeley.edu/" target="_blank">UC Berkeley</a>, where I work with Professors Miki Lustig in Electrical Engineering and Computer Science and Sandya Subramanian in Computational Precision Health . I received my S.B. in EECS and B.S.A.D. in Art and Design from <a href="https://web.mit.edu" target="_blank">MIT</a> in 2025, where I worked with Professor <a href="https://meche.mit.edu/people/faculty/lozat@mit.edu" target="_blank">Loza Tadesse</a> and Professor <a href="https://meche.mit.edu/people/faculty/cgt20@mit.edu" target="_blank">Giovanni Traverso</a> at MIT MechE. In my free time, you can find me in nature, making music, and building things! Click through the tabs to see some projects I've worked on and please feel free to contact me at shruthi (at) berkeley (dot) edu!</p>
+                <p>Hi! I'm Shruthi, a second-year PhD student at <a href="https://eecs.berkeley.edu/" target="_blank">UC Berkeley</a>, where I work with Professors Miki Lustig in Electrical Engineering and Computer Science and Sandya Subramanian in Computational Precision Health. I received my S.B. in EECS and B.S.A.D. in Art and Design from <a href="https://web.mit.edu" target="_blank">MIT</a> in 2025, where I worked with Professor <a href="https://meche.mit.edu/people/faculty/lozat@mit.edu" target="_blank">Loza Tadesse</a> and Professor <a href="https://meche.mit.edu/people/faculty/cgt20@mit.edu" target="_blank">Giovanni Traverso</a> at MIT MechE. In my free time, you can find me in nature, making music, and building things! Click through the tabs to see some projects I've worked on and please feel free to contact me at shruthi (at) berkeley (dot) edu!</p>
             </div>
             <div class="home-image">
                 <img src="https://www.dropbox.com/scl/fi/gy8dozjia45klubu6r6jr/headshot_CPH.jpeg?rlkey=v3lvbu7coy67wjbbccsu5939g&dl=0&raw=1" alt="Shruthi Ravichandran">
@@ -195,15 +265,11 @@
         </div>
     </div>
 
-
-
-    
-
     <!-- Projects Section -->
     <div id="projects" class="section">
         <h3>Projects</h3>
         <p>Hover over the images to see project titles. Click to learn more!</p>
-	<div class="project-item">
+        <div class="project-item">
             <img src="https://cdn.sanity.io/images/s7wdvm3i/production/43fc210eba2332959d7e371a1374a42ddbce3a19-4393x2804.jpg?w=2000&auto=format" alt="Cloud Chair" onclick="openModal('modal3')">
             <div class="project-title">Cloud Chair</div>
         </div>
@@ -215,58 +281,113 @@
             <img src="https://www.dropbox.com/scl/fi/kgn5gyv0ckh91q5bkn69f/Shruthi-Off-Track.jpg?rlkey=0tb93anp9p0nay3f8u51gvlvs&raw=1" alt="Off Track" onclick="openModal('modal2')">
             <div class="project-title">Off Track</div>
         </div>
-
         <div class="project-item">
             <img src="https://www.dropbox.com/scl/fi/adicftb3iecw9q71y5tv8/DSC03317.JPG?rlkey=f4wj08fw8pm840dm007tx1hc0&raw=1" alt="Mine Sweeper" onclick="openModal('modal7')">
             <div class="project-title">Mine Sweeper</div>
         </div>
-
         <div class="project-item">
             <img src="https://www.dropbox.com/scl/fi/f2uqnfbxynh0odol0ov2t/DSC04337.JPG?rlkey=n4vmlv061td5nr4r1cz7gxp1n&raw=1" alt="Ailara" onclick="openModal('modal8')">
             <div class="project-title">Ailara</div>
         </div>
-
         <div class="project-item">
             <img src="https://www.dropbox.com/scl/fi/2g0vcr99wi944icusc6lz/treewalkbooklet.png?rlkey=imky2colpotll02jmrmyd7hes&raw=1" alt="a tree walk through mit's campus" onclick="openModal('modal9')">
             <div class="project-title">a tree walk through mit's campus</div>
         </div>
-
     </div>
 
     <!-- Research Section -->
     <div id="research" class="section">
         <h3>Research</h3>
-        <p>I'm passionate about using engineering to create healthcare solutions that are accessible to all. I currently work with Profs. Loza Tadesse and Giovanni Traverso at MIT. In the past, I've worked with Prof. Stathis Karathanasis at Case Western Reserve University and Prof. Jean-Pierre Raskin at UCLouvain.</p>
-        <h4>Publications</h4>
-        <ul class="no-bullets">
-            <li><a href="https://pubmed.ncbi.nlm.nih.gov/33400743/" target="_blank">Bielecki PA, Lorkowski ME, Becicka WM, Atukorale PU, Moon TJ, Zhang Y, Wiese M, Covarrubias G, <b><u>Ravichandran S</u></b>, Karathanasis E. Immunostimulatory silica nanoparticle boosts innate immunity in brain tumors. Nanoscale Horiz. 2021 Feb 1;6(2):156-167. doi: 10.1039/d0nh00446d. Epub 2021 Jan 5. PMID: 33400743; PMCID: PMC7878432.
-</a></li>
-            <li><a href="https://example.com/publication2" target="_blank">Manuscripts in Progress:</a></li>
-        </ul>
+        <p>I'm passionate about using engineering to create healthcare solutions that are accessible to all. I currently work with Profs. Miki Lustig and Sandya Subramanian at UC Berkeley. In the past, I have been fortunate to work with Profs. Loza Tadesse and Giovanni Traverso at MIT, Prof. Stathis Karathanasis at Case Western Reserve University, and Prof. Jean-Pierre Raskin at UCLouvain.</p>
+        
+        <!-- Published Papers -->
+        <h4>Published</h4>
+        
+        <div class="publication-item">
+            <img src="IMAGE_URL_HERE" alt="HealthReflect" class="paper-image">
+            <div class="paper-details">
+                <div class="paper-title">HealthReflect: Design of a Bathroom Smart Mirror to Capture Comprehensive Consumer Health Data Trends</div>
+                <div class="paper-authors">Jorge Farfan, <b><u>Shruthi Ravichandran</u></b>, Maryam Shamsie, C Giovanni Traverso, Saurin Jani, Nevan C Hanumara</div>
+                <div class="paper-meta">2025 47th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), pp. 1-7 (July 2025)</div>
+            </div>
+        </div>
+
+        <div class="publication-item">
+            <img src="IMAGE_URL_HERE" alt="Immunostimulatory silica nanoparticle" class="paper-image">
+            <div class="paper-details">
+                <div class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/33400743/" target="_blank">Immunostimulatory silica nanoparticle boosts innate immunity in brain tumors</a></div>
+                <div class="paper-authors">Bielecki PA, Lorkowski ME, Becicka WM, Atukorale PU, Moon TJ, Zhang Y, Wiese M, Covarrubias G, <b><u>Ravichandran S</u></b>, Karathanasis E.</div>
+                <div class="paper-meta">Nanoscale Horizons, 6(2):156-167 (Feb 2021)</div>
+            </div>
+        </div>
+
+        <!-- Theses & Reports -->
+        <h4>Theses & Reports</h4>
+
+        <div class="publication-item">
+            <img src="IMAGE_URL_HERE" alt="MIT Underground Tunnels" class="paper-image">
+            <div class="paper-details">
+                <div class="paper-title">The Image of the Tunnels: Mapping Perception of the MIT Underground</div>
+                <div class="paper-authors"><b><u>Shruthi Ravichandran</u></b></div>
+                <div class="paper-meta">Bachelor's Thesis, Massachusetts Institute of Technology (May 2025)</div>
+            </div>
+        </div>
+
+        <!-- Preprints -->
+        <h4>Preprints</h4>
+
+        <div class="publication-item">
+            <img src="IMAGE_URL_HERE" alt="Raman spectroscopy residual bead" class="paper-image">
+            <div class="paper-details">
+                <div class="paper-title"><a href="https://www.biorxiv.org" target="_blank">[PDF] Rapid residual bead quantification for cell therapy manufacturing using Raman spectroscopy</a></div>
+                <div class="paper-authors">Marissa Morales, <b><u>Shruthi Ravichandran</u></b>, Seleem Badawy, Loza F Tadesse</div>
+                <div class="paper-meta">bioRxiv, Cold Spring Harbor Laboratory (March 2026)</div>
+            </div>
+        </div>
+
+        <div class="publication-item">
+            <img src="IMAGE_URL_HERE" alt="Label-free Raman spectroscopy" class="paper-image">
+            <div class="paper-details">
+                <div class="paper-title">Nucleic acid turnover and lipid remodeling distinguish T cell activation and exhaustion states via label-free Raman spectroscopy</div>
+                <div class="paper-authors">Marissa Morales, Srilakshmi Premachandran, <b><u>Shruthi Ravichandran</u></b>, Loza F Tadesse</div>
+                <div class="paper-meta">bioRxiv, Cold Spring Harbor Laboratory (2026)</div>
+            </div>
+        </div>
+
+        <div class="publication-item">
+            <img src="IMAGE_URL_HERE" alt="High-resolution electrogastrography" class="paper-image">
+            <div class="paper-details">
+                <div class="paper-title">Recovering the spatiotemporal dynamics of stomach muscle coupling during digestion using wearable high-resolution electrogastrography</div>
+                <div class="paper-authors">Joshua Everts, Jeshwanth Mohan, <b><u>Shruthi Ravichandran</u></b>, Belinda Chen, Sandya Subramanian</div>
+                <div class="paper-meta">Preprint</div>
+            </div>
+        </div>
+
+        <!-- Patents -->
         <h4>Patents</h4>
         <ul class="no-bullets">
-            <li><a href="https://example.com/patent1" target="_blank">Patents (under Review):</a></li>
+            <li>Patents under review</li>
         </ul>
-        <h4> Class Projects </h4>
+
+        <!-- Class Projects -->
+        <h4>Class Projects</h4>
         <div class="project-item">
             <img src="https://www.dropbox.com/scl/fi/4ychrfnho097msvo0ah46/Screenshot-2024-11-19-at-6.35.24-PM.png?rlkey=zgx9n453yow38fyd4f37l52hl&raw=1" alt="Cavity Resonator Glucose Sensor" onclick="openModal('modal4')">
             <div class="project-title">Cavity Resonator Glucose Sensor</div>
         </div>
         <div class="project-item">
-            <img src="https://www.dropbox.com/scl/fi/b444k0ns08prgv1j4umsc/15C08CC5-5BCE-4844-900C-DACB72C14737.jpeg?rlkey=spg3z2092o5h9elvgo0elniug&raw=1" alt="Mobile Strecher" onclick="openModal('modal5')">
+            <img src="https://www.dropbox.com/scl/fi/b444k0ns08prgv1j4umsc/15C08CC5-5BCE-4844-900C-DACB72C14737.jpeg?rlkey=spg3z2092o5h9elvgo0elniug&raw=1" alt="Mobile Stretcher" onclick="openModal('modal5')">
             <div class="project-title">Mobile Stretcher</div>
         </div>
-    <div class="project-item">
+        <div class="project-item">
             <img src="https://www.dropbox.com/scl/fi/i3qsby8d5y4as93mkfm6t/healthstation.png?rlkey=g3tuvcbbunj67zaxf934zhntw&raw=1" alt="Mobile Health Station" onclick="openModal('modal6')">
             <div class="project-title">Mobile Health Station</div>
         </div>
     </div>
-    </div>
-    
- 
 
     <!-- Featured Section -->
     <div id="featured" class="section">
+        <h3>Featured</h3>
         <ul class="no-bullets">
             <li><a href="https://misti.mit.edu/shruthi-ravichandran-summer-2023" target="_blank">Experience working at the National Innovation Center in Nepal</a></li>
             <li><a href="https://misti.mit.edu/shruthi-belgium-story" target="_blank">Experience researching at UCLouvain in Belgium</a></li>
@@ -284,38 +405,33 @@
     <div class="modal-header">Infinite Illuminance</div>
     <div class="modal-content">
         Final lamp for <a href="https://architecture.mit.edu/sites/default/files/course-documents/23fa-4.031_syll_coelho_2.pdf" target="_blank">4.031 Design Studio: Objects and Interactions</a>, taken Fall 2023. 
-    </div>
-    <button class="close-button" onclick="closeModal()">×</button>
-    <div class="modal-content">
-        <!-- PDF viewer -->
-        <iframe 
-            src="https://www.dropbox.com/scl/fi/aak19bke7pcj4zcld4gyd/Shruthi-Infinite-Illuminance-Lamp-Presentation.pdf?rlkey=n0s1ct295rphb41zwyqs4as9l&raw=1" 
-            width="100%" 
-            height="300px" 
-            frameborder="0">
-        </iframe>
+        <div style="margin-top: 15px;">
+            <iframe 
+                src="https://www.dropbox.com/scl/fi/aak19bke7pcj4zcld4gyd/Shruthi-Infinite-Illuminance-Lamp-Presentation.pdf?rlkey=n0s1ct295rphb41zwyqs4as9l&raw=1" 
+                width="100%" 
+                height="300px" 
+                frameborder="0">
+            </iframe>
+        </div>
     </div>
 </div>
 
 <div id="modal2" class="modal">
     <button class="close-button" onclick="closeModal()">×</button>
-    <div class="modal-header">Project 1</div>
+    <div class="modal-header">Off Track</div>
     <div class="modal-content">
         <p>Final clock for <a href="https://architecture.mit.edu/sites/default/files/course-documents/23fa-4.031_syll_coelho_2.pdf" target="_blank">4.031 Design Studio: Objects and Interactions</a>, taken Fall 2023.</p>
 
-        <!-- PDF Upload via iframe -->
         <div class="pdf-container" style="margin-top: 20px;">
             <h4>Presentation:</h4>
             <iframe 
                 src="https://www.dropbox.com/scl/fi/d8ru8ta0onx039jtembr7/Shruthi-Off-Track.pdf?rlkey=o231p9442mibusewlicfw96e7&raw=1" 
                 width="100%" 
                 height="300px" 
-                frameborder="0"
-                style="border: 1px solid #ddd; border-radius: 5px;">
+                frameborder="0">
             </iframe>
         </div>
 
-        <!-- Embedded MP4 Video -->
         <div class="video-container" style="margin-top: 20px;">
             <h4>Project Demo:</h4>
             <video width="100%" height="auto" controls>
@@ -326,15 +442,12 @@
     </div>
 </div>
 
-
-
 <div id="modal3" class="modal">
     <button class="close-button" onclick="closeModal()">×</button>
     <div class="modal-header">Cloud Chair</div>
     <div class="modal-content">
         Final chair for <a href="https://opencw.aprende.org/courses/architecture/4-500-introduction-to-design-computing-fall-2008/" target="_blank">4.500 Design Computation</a>, taken Fall 2023. 
     </div>
-    <button class="close-button" onclick="closeModal()">×</button>
 </div>
 
 <div id="modal7" class="modal">
@@ -343,7 +456,6 @@
     <div class="modal-content">
         Final 1D interface project for <a href="https://archhq.mit.edu/sites/default/files/images/Design%20Studio%20-%20Advanced%20Interactions%20-%20Syllabus%20-%20Spring%202021.pdf" target="_blank">4.043 Advanced Objects Interaction</a>, taken Spring 2024. 
     </div>
-    <button class="close-button" onclick="closeModal()">×</button>
 </div>
 
 <div id="modal8" class="modal">
@@ -352,25 +464,17 @@
     <div class="modal-content">
         Final Large Language Object Project for <a href="https://archhq.mit.edu/sites/default/files/images/Design%20Studio%20-%20Advanced%20Interactions%20-%20Syllabus%20-%20Spring%202021.pdf" target="_blank">4.043 Advanced Objects Interaction</a>, taken Spring 2024. 
     </div>
-    <button class="close-button" onclick="closeModal()">×</button>
 </div>
-
-
-
 
 <div id="modal4" class="modal">
     <button class="close-button" onclick="closeModal()">×</button>
     <div class="modal-header">Cavity Resonator Glucose Sensor</div>
     <div class="modal-content">
-        Final project for <a href="https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/" target="_blank">6.2300: Electromagnetic Waves and Applications</a>, taken Spring 2023. 
-    </div>
-    <button class="close-button" onclick="closeModal()">×</button>
-    <div class="modal-content">
-        <!-- PDF viewer -->
+        <p>Final project for <a href="https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/" target="_blank">6.2300: Electromagnetic Waves and Applications</a>, taken Spring 2023.</p>
         <iframe 
             src="https://www.dropbox.com/scl/fi/jydnojjqw4z9r8y4xq81j/FinalPaper.pdf?rlkey=dtk6d3ctv0j6kxxjvp15nvmmy&raw=1" 
             width="100%" 
-            height="500px" 
+            height="350px" 
             frameborder="0">
         </iframe>
     </div>
@@ -380,15 +484,11 @@
     <button class="close-button" onclick="closeModal()">×</button>
     <div class="modal-header">Mobile Stretcher</div>
     <div class="modal-content">
-        Final project for <a href="https://d-lab.mit.edu/academics/classes/d-lab-design">D-Lab Design</a>, taken Spring 2023. 
-    </div>
-    <button class="close-button" onclick="closeModal()">×</button>
-    <div class="modal-content">
-        <!-- PDF viewer -->
+        <p>Final project for <a href="https://d-lab.mit.edu/academics/classes/d-lab-design">D-Lab Design</a>, taken Spring 2023.</p>
         <iframe 
             src="https://www.dropbox.com/scl/fi/wv7dj6pruzh88d0a26fii/BuildingInstructions.pdf?rlkey=7aqalx6g2uvtn3cdeosfvw6er&raw=1" 
             width="100%" 
-            height="500px" 
+            height="350px" 
             frameborder="0">
         </iframe>
     </div>
@@ -398,15 +498,11 @@
     <button class="close-button" onclick="closeModal()">×</button>
     <div class="modal-header">Mobile Health Station</div>
     <div class="modal-content">
-        Final project for <a href="https://meddevdesign.mit.edu/">2.75: Medical Device Design</a>, taken Spring 2024. 
-    </div>
-    <button class="close-button" onclick="closeModal()">×</button>
-    <div class="modal-content">
-        <!-- PDF viewer -->
+        <p>Final project for <a href="https://meddevdesign.mit.edu/">2.75: Medical Device Design</a>, taken Spring 2024.</p>
         <iframe 
             src="https://www.dropbox.com/scl/fi/iku5412ihyuwapd8vv81l/2.75_HealthStation_IEEE_DraftFinalPaper.pdf?rlkey=pt0stz46antz0cogglu15mg7s&raw=1" 
             width="100%" 
-            height="500px" 
+            height="350px" 
             frameborder="0">
         </iframe>
     </div>
@@ -418,7 +514,6 @@
     <div class="modal-content">
         Final Project for <a href="https://architecture.mit.edu/sites/default/files/course-documents/23fa-4.053-syll-keum.pdf" target="_blank">4.053 Visual Communication Fundamentals</a>, taken Fall 2024. 
     </div>
-    <button class="close-button" onclick="closeModal()">×</button>
 </div>
 
 <script>
