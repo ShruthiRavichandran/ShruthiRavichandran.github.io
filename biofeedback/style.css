@@ -1,0 +1,408 @@
+/* ============================================================
+   AIrVest — shared stylesheet
+   shruthiravichandran.github.io/biofeedback
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:     #0D1B2A;
+  --bg2:    #132336;
+  --text:   #E8EFF7;
+  --muted:  #8A9BB0;
+  --accent: #2ABFBF;
+  --accent2:#1A9090;
+  --border: rgba(42, 191, 191, 0.18);
+  --max:    860px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 16px;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(13, 27, 42, 0.93);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 56px;
+}
+
+.nav-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 2.5rem 5rem;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.hero-inner { width: 100%; }
+
+.hero-tag {
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.hero-tag::before {
+  content: '';
+  display: block;
+  width: 28px; height: 1px;
+  background: var(--accent);
+}
+
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.6rem;
+  max-width: 680px;
+}
+
+h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 2.8rem;
+  line-height: 1.85;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.78rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ── SHARED SECTION ── */
+section {
+  padding: 5.5rem 2.5rem;
+  max-width: var(--max);
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+}
+
+.section-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 20px; height: 1px;
+  background: var(--accent);
+}
+
+h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.4rem;
+  line-height: 1.25;
+}
+
+p { max-width: 64ch; color: var(--text); margin-bottom: 1rem; }
+p.wide { max-width: 72ch; }
+p:last-child { margin-bottom: 0; }
+
+/* ── MOTIVATION ── */
+.motivation-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5px;
+  margin-top: 2.8rem;
+  border: 1px solid var(--border);
+}
+
+.motivation-cell {
+  padding: 1.8rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+}
+
+.motivation-cell h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.7rem;
+}
+
+.motivation-cell p {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.75;
+  max-width: none;
+  margin: 0;
+}
+
+/* ── APPROACH ── */
+.approach-steps {
+  margin-top: 2.8rem;
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--border);
+}
+
+.approach-step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  border-bottom: 1px solid var(--border);
+}
+.approach-step:last-child { border-bottom: none; }
+
+.step-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent2);
+  padding: 1.6rem 0 1.6rem 1.4rem;
+  letter-spacing: 0.06em;
+}
+
+.step-body {
+  padding: 1.6rem 1.6rem 1.6rem 1rem;
+  border-left: 1px solid var(--border);
+}
+
+.step-body h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.step-body p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: none;
+  margin: 0;
+}
+
+/* ── DIRECTIONS ── */
+.directions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2.8rem;
+}
+
+.direction-card {
+  border: 1px solid var(--border);
+  padding: 1.6rem;
+  background: var(--bg2);
+}
+
+.direction-card.active-card {
+  border-color: rgba(42, 191, 191, 0.4);
+}
+
+.dir-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.direction-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+  line-height: 1.35;
+}
+
+.direction-card p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: none;
+  margin: 0;
+}
+
+/* ── UPDATES ── */
+.updates-list {
+  margin-top: 2.2rem;
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--border);
+}
+
+.update-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  border-bottom: 1px solid var(--border);
+}
+.update-item:last-child { border-bottom: none; }
+
+.update-date {
+  padding: 1.3rem 1rem 1.3rem 1.4rem;
+  font-size: 0.78rem;
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+.update-body {
+  padding: 1.3rem 1.4rem;
+  border-left: 1px solid var(--border);
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.update-body strong { color: var(--accent); font-weight: 500; }
+
+/* ── TEAM ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.team-card {
+  padding: 1.3rem 1.4rem;
+  border: 1px solid var(--border);
+}
+
+.team-card.you { border-color: rgba(42, 191, 191, 0.4); }
+
+.team-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.team-card.you .team-name { color: var(--accent); }
+
+.team-role  { font-size: 0.8rem;  color: var(--muted); line-height: 1.6; }
+.team-affil { font-size: 0.75rem; color: var(--accent2); margin-top: 0.2rem; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 2.5rem;
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-name  { font-size: 0.82rem; color: var(--muted); }
+
+.footer-back {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-back:hover { color: var(--accent); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 620px) {
+  nav { padding: 0 1.2rem; }
+  .nav-links { gap: 1.2rem; }
+  .hero { padding: 88px 1.2rem 3.5rem; }
+  section { padding: 4rem 1.2rem; }
+  .motivation-split,
+  .directions-grid,
+  .team-grid { grid-template-columns: 1fr; }
+  .approach-step { grid-template-columns: 44px 1fr; }
+  .update-item { grid-template-columns: 1fr; }
+  .update-date { padding: 1rem 1.2rem 0.2rem; }
+  .update-body { border-left: none; border-top: 1px solid var(--border); padding: 0.8rem 1.2rem 1.2rem; }
+  footer { padding: 2rem 1.2rem; flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot { animation: none; }
+}

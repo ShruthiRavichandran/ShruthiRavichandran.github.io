@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AIrVest — Soft Robotic Biofeedback Wearable</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="#">AIrVest</a>
+    <ul class="nav-links">
+      <li><a href="#motivation">Motivation</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#directions">Directions</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="https://shruthiravichandran.github.io" target="_blank">← Main site</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">UC Berkeley · EECS · Ongoing Research</div>
+      <h1>Breathing <em>with</em> the machine, not against it</h1>
+      <p class="hero-sub">AIrVest is a soft robotic wearable that uses gentle pneumatic pressure to guide breathing — making respiratory motion management in MRI and radiotherapy easier on patients and more reliable for clinicians.</p>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        Active project
+      </div>
+    </div>
+  </div>
+
+  <!-- MOTIVATION -->
+  <section id="motivation">
+    <div class="section-label">Motivation</div>
+    <h2>A clinical problem hiding in plain sight</h2>
+    <p class="wide">Breathing is involuntary — and in high-stakes imaging and treatment settings, that creates real problems. Respiratory motion blurs MRI scans and shifts the target during radiation therapy, putting healthy tissue at risk. The current workaround asks patients to actively control their breathing throughout long, stressful procedures.</p>
+
+    <div class="motivation-split">
+      <div class="motivation-cell">
+        <h3>The imaging problem</h3>
+        <p>Motion artifacts from breathing degrade MRI quality and complicate scan interpretation. Navigators and breath-holds add time and cognitive load — particularly difficult for anxious, elderly, or pediatric patients.</p>
+      </div>
+      <div class="motivation-cell">
+        <h3>The treatment problem</h3>
+        <p>In radiotherapy, respiratory motion shifts the tumor target, requiring larger safety margins that expose healthy surrounding tissue to radiation. Reliable motion management is safety-critical, not just a quality-of-life issue.</p>
+      </div>
+      <div class="motivation-cell">
+        <h3>Why existing tools fall short</h3>
+        <p>Gating, breath-holds, and audio/visual biofeedback all demand sustained attention — which is unreliable in the clinic. A solution that works passively, without active patient effort, would be transformative.</p>
+      </div>
+      <div class="motivation-cell">
+        <h3>Our hypothesis</h3>
+        <p>Gentle, rhythmic pneumatic cues — like a vest that quietly expands and contracts — can guide breathing through haptic entrainment, without requiring any conscious effort from the patient.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach">
+    <div class="section-label">Approach</div>
+    <h2>Soft robotics meets clinical sensing</h2>
+    <p class="wide">AIrVest combines a pneumatic wearable vest with real-time motion sensing and a feedback controller to close the loop between measured breathing and delivered cues. The system is designed from the ground up to be MRI-compatible, unobtrusive, and adaptable to each patient.</p>
+
+    <div class="approach-steps">
+      <div class="approach-step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Sense breathing</h3>
+          <p>We capture respiratory motion through multiple modalities — including nasal airflow and MRI-native motion signals — to robustly estimate a patient's natural breathing rhythm in real time, without external hardware the patient has to interact with.</p>
+        </div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>Deliver haptic feedback</h3>
+          <p>The vest delivers rhythmic pressure cues via pneumatic chambers worn against the body. The cues are timed to a target breathing period — gently expanding and releasing to suggest a new rhythm, without requiring the patient to consciously follow instructions.</p>
+        </div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Integrate with the scanner</h3>
+          <p>All electronics and pneumatic hardware live outside the scanner bore, connected to the vest via flexible tubing. MRI-compatible sensing lets us use scanner-native signals — including navigator echoes and Beat Pilot Tone — to drive feedback without additional equipment inside the bore.</p>
+        </div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3>Adapt to the individual</h3>
+          <p>Breathing responses to haptic cues vary across people. Our longer-term goal is a closed-loop controller that learns each patient's response and adjusts feedback timing and intensity accordingly — moving beyond fixed heuristics toward truly personalized respiratory guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTIONS -->
+  <section id="directions">
+    <div class="section-label">Current Directions</div>
+    <h2>Where we're headed</h2>
+    <p class="wide">AIrVest is an active research project. We're simultaneously developing the hardware, the control algorithms, and the clinical evaluation framework. Here's what we're actively working on.</p>
+
+    <div class="directions-grid">
+      <div class="direction-card active-card">
+        <div class="dir-eyebrow">Hardware</div>
+        <h3>MRI-compatible vest design</h3>
+        <p>Iterating on vest form factor, chamber geometry, and materials to maximize comfort and pressure delivery while maintaining full MRI compatibility across field strengths.</p>
+      </div>
+      <div class="direction-card active-card">
+        <div class="dir-eyebrow">Control</div>
+        <h3>Personalized closed-loop control</h3>
+        <p>Developing adaptive controllers — including model predictive control approaches — that adjust to each patient's entrainment response rather than applying fixed timing heuristics.</p>
+      </div>
+      <div class="direction-card active-card">
+        <div class="dir-eyebrow">Sensing</div>
+        <h3>Scanner-native motion signals</h3>
+        <p>Integrating Beat Pilot Tone and navigator echoes as primary motion sensing modalities to eliminate dependence on external sensors inside the scanner environment.</p>
+      </div>
+      <div class="direction-card active-card">
+        <div class="dir-eyebrow">Evaluation</div>
+        <h3>Imaging quality metrics</h3>
+        <p>Building a systematic framework for quantifying how well AIrVest reduces motion artifacts in MRI and improves target stability in simulated radiotherapy scenarios.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPDATES -->
+  <section id="updates">
+    <div class="section-label">Updates</div>
+    <h2>Project milestones</h2>
+
+    <div class="updates-list">
+      <div class="update-item">
+        <div class="update-date">2025</div>
+        <div class="update-body"><strong>Project launched</strong> — AIrVest initiated at UC Berkeley EECS. Initial system architecture, vest prototyping, and non-MR development configuration established.</div>
+      </div>
+      <div class="update-item">
+        <div class="update-date">2025</div>
+        <div class="update-body"><strong>MRI integration</strong> — Preliminary in-scanner deployment completed. Demonstrated compatibility with MRI environment and feasibility of scanner-native motion sensing.</div>
+      </div>
+      <div class="update-item">
+        <div class="update-date">2026</div>
+        <div class="update-body"><strong>Pilot evaluation</strong> — Initial human subject testing conducted under IRB approval. Results informing adaptive control development and next hardware iteration.</div>
+      </div>
+      <div class="update-item">
+        <div class="update-date">Ongoing</div>
+        <div class="update-body"><strong>Closed-loop control</strong> — Active development of personalized feedback controllers. Formal imaging characterization and expanded subject studies in progress.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team">
+    <div class="section-label">Team</div>
+    <h2>Who we are</h2>
+    <p>AIrVest is a collaboration within the <a href="https://people.eecs.berkeley.edu/~mlustig/" target="_blank" style="color:var(--accent);text-decoration:none;">Lustig Lab</a> at UC Berkeley's Department of Electrical Engineering and Computer Science.</p>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-name">Alfredo De Goyeneche</div>
+        <div class="team-role">PhD Student</div>
+        <div class="team-affil">UC Berkeley · EECS</div>
+      </div>
+      <div class="team-card you">
+        <div class="team-name">Shruthi Ravichandran</div>
+        <div class="team-role">PhD Student</div>
+        <div class="team-affil">UC Berkeley · EECS</div>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Stella Yu</div>
+        <div class="team-role">Collaborator</div>
+        <div class="team-affil">UC Berkeley · EECS &amp; University of Michigan</div>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Miki Lustig</div>
+        <div class="team-role">Principal Investigator</div>
+        <div class="team-affil">UC Berkeley · EECS</div>
+      </div>
+    </div>
+
+    <p style="margin-top:2.2rem;font-size:0.88rem;color:var(--muted);">Interested in this work or potential collaboration? Reach out at <a href="mailto:shruthi@berkeley.edu" style="color:var(--accent);text-decoration:none;">shruthi@berkeley.edu</a>.</p>
+  </section>
+
+  <footer>
+    <span class="footer-name">Shruthi Ravichandran · UC Berkeley · shruthi@berkeley.edu</span>
+    <a class="footer-back" href="https://shruthiravichandran.github.io" target="_blank">← Back to main site</a>
+  </footer>
+
+</body>
+</html>
