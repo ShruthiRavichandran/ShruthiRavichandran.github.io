@@ -4,190 +4,236 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>AIrVest — Soft Robotic Biofeedback Wearable</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="description" content="AIrVest is a soft robotic wearable that uses gentle pneumatic pressure to guide breathing during MRI and radiotherapy.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
   <nav>
-    <a class="nav-brand" href="#">AIrVest</a>
+    <a class="nav-brand" href="#top">AIrVest</a>
     <ul class="nav-links">
       <li><a href="#motivation">Motivation</a></li>
-      <li><a href="#approach">Approach</a></li>
-      <li><a href="#directions">Directions</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="https://shruthiravichandran.github.io" target="_blank">← Main site</a></li>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#authors">Authors</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
-  <div class="hero">
-    <div class="hero-inner">
-      <div class="hero-tag">UC Berkeley · EECS · Ongoing Research</div>
-      <h1>Breathing <em>with</em> the machine, not against it</h1>
-      <p class="hero-sub">AIrVest is a soft robotic wearable that uses gentle pneumatic pressure to guide breathing — making respiratory motion management in MRI and radiotherapy easier on patients and more reliable for clinicians.</p>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        Active project
-      </div>
+  <header class="hero" id="top">
+    <div class="hero-tag reveal">UC Berkeley · Electrical Engineering &amp; Computer Sciences</div>
+    <h1 class="reveal">AIrVest: A Soft Robotic Wearable for Respiratory Biofeedback</h1>
+    <p class="hero-sub reveal">A pneumatic vest that uses gentle, rhythmic pressure to guide breathing, making respiratory motion management in MRI and radiotherapy easier on patients and more reliable for clinicians.</p>
+    <p class="hero-authors reveal">
+      Alfredo De Goyeneche, <strong>Shruthi Ravichandran</strong>, Stella Yu, Miki Lustig
+    </p>
+    <div class="hero-links reveal">
+      <a class="btn" href="#publications">Publications</a>
+      <a class="btn btn-ghost" href="#contact">Contact</a>
     </div>
-  </div>
+  </header>
 
-  <!-- MOTIVATION -->
-  <section id="motivation">
-    <div class="section-label">Motivation</div>
-    <h2>A clinical problem hiding in plain sight</h2>
-    <p class="wide">Breathing is involuntary — and in high-stakes imaging and treatment settings, that creates real problems. Respiratory motion blurs MRI scans and shifts the target during radiation therapy, putting healthy tissue at risk. The current workaround asks patients to actively control their breathing throughout long, stressful procedures.</p>
+  <main>
 
-    <div class="motivation-split">
-      <div class="motivation-cell">
-        <h3>The imaging problem</h3>
-        <p>Motion artifacts from breathing degrade MRI quality and complicate scan interpretation. Navigators and breath-holds add time and cognitive load — particularly difficult for anxious, elderly, or pediatric patients.</p>
-      </div>
-      <div class="motivation-cell">
-        <h3>The treatment problem</h3>
-        <p>In radiotherapy, respiratory motion shifts the tumor target, requiring larger safety margins that expose healthy surrounding tissue to radiation. Reliable motion management is safety-critical, not just a quality-of-life issue.</p>
-      </div>
-      <div class="motivation-cell">
-        <h3>Why existing tools fall short</h3>
-        <p>Gating, breath-holds, and audio/visual biofeedback all demand sustained attention — which is unreliable in the clinic. A solution that works passively, without active patient effort, would be transformative.</p>
-      </div>
-      <div class="motivation-cell">
-        <h3>Our hypothesis</h3>
-        <p>Gentle, rhythmic pneumatic cues — like a vest that quietly expands and contracts — can guide breathing through haptic entrainment, without requiring any conscious effort from the patient.</p>
-      </div>
-    </div>
-  </section>
+    <!-- MOTIVATION -->
+    <section id="motivation">
+      <div class="section-label reveal">01 · Motivation</div>
+      <h2 class="reveal">Respiratory motion is a persistent clinical problem</h2>
+      <p class="wide reveal">Breathing is largely involuntary, and in imaging and treatment settings that creates real problems. Respiratory motion blurs MRI scans and shifts the target during radiation therapy, putting healthy tissue at risk. Current workarounds ask patients to actively control their breathing throughout long, stressful procedures.</p>
 
-  <!-- APPROACH -->
-  <section id="approach">
-    <div class="section-label">Approach</div>
-    <h2>Soft robotics meets clinical sensing</h2>
-    <p class="wide">AIrVest combines a pneumatic wearable vest with real-time motion sensing and a feedback controller to close the loop between measured breathing and delivered cues. The system is designed from the ground up to be MRI-compatible, unobtrusive, and adaptable to each patient.</p>
-
-    <div class="approach-steps">
-      <div class="approach-step">
-        <div class="step-num">01</div>
-        <div class="step-body">
-          <h3>Sense breathing</h3>
-          <p>We capture respiratory motion through multiple modalities — including nasal airflow and MRI-native motion signals — to robustly estimate a patient's natural breathing rhythm in real time, without external hardware the patient has to interact with.</p>
+      <div class="card-grid">
+        <div class="card reveal">
+          <h3>Imaging</h3>
+          <p>Motion artifacts from breathing degrade MRI quality and complicate interpretation. Navigators and breath-holds add scan time and cognitive load, which is especially difficult for anxious, elderly, or pediatric patients.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Treatment</h3>
+          <p>In radiotherapy, respiratory motion shifts the tumor target, requiring larger safety margins that expose surrounding healthy tissue to radiation. Reliable motion management is a safety concern, not only a comfort one.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Limits of existing tools</h3>
+          <p>Gating, breath-holds, and audio/visual biofeedback all demand sustained attention, which is unreliable in the clinic. A method that works without active patient effort would be a meaningful step forward.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Our hypothesis</h3>
+          <p>Gentle, rhythmic pneumatic cues from a vest that quietly expands and contracts can guide breathing through haptic entrainment, without requiring conscious effort from the patient.</p>
         </div>
       </div>
-      <div class="approach-step">
-        <div class="step-num">02</div>
-        <div class="step-body">
-          <h3>Deliver haptic feedback</h3>
-          <p>The vest delivers rhythmic pressure cues via pneumatic chambers worn against the body. The cues are timed to a target breathing period — gently expanding and releasing to suggest a new rhythm, without requiring the patient to consciously follow instructions.</p>
+    </section>
+
+    <!-- DESIGN -->
+    <section id="design">
+      <div class="section-label reveal">02 · Design</div>
+      <h2 class="reveal">System overview</h2>
+      <p class="wide reveal">AIrVest combines a pneumatic wearable with real-time respiratory sensing and a feedback controller that closes the loop between measured breathing and delivered cues. The system is designed to be MRI-compatible, unobtrusive, and adaptable to each patient.</p>
+
+      <!-- To add a figure, uncomment and point src at an image in this folder:
+      <figure class="figure reveal">
+        <img src="images/system-overview.png" alt="AIrVest system diagram">
+        <figcaption>Figure 1. AIrVest system overview.</figcaption>
+      </figure>
+      -->
+
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num">1</span>
+          <div>
+            <h3>Sensing</h3>
+            <p>Respiratory motion is captured through multiple modalities, including nasal airflow and MRI-native motion signals, to estimate the patient's breathing rhythm in real time without hardware the patient has to interact with.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">2</span>
+          <div>
+            <h3>Haptic feedback</h3>
+            <p>Pneumatic chambers worn against the body deliver rhythmic pressure cues timed to a target breathing period, gently expanding and releasing to suggest a new rhythm without explicit instructions.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">3</span>
+          <div>
+            <h3>Scanner integration</h3>
+            <p>All electronics and pneumatics sit outside the scanner bore, connected to the vest by flexible tubing. Scanner-native signals such as navigator echoes and Beat Pilot Tone can drive feedback without additional equipment in the bore.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">4</span>
+          <div>
+            <h3>Personalized control</h3>
+            <p>Breathing responses to haptic cues vary across people. Ongoing work develops closed-loop controllers that learn each patient's response and adjust cue timing and intensity accordingly.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PUBLICATIONS & PRESENTATIONS -->
+    <section id="publications">
+      <div class="section-label reveal">03 · Publications &amp; Presentations</div>
+      <h2 class="reveal">Publications and presentations</h2>
+
+      <p class="reveal">Publications and presentations from this project will be listed here as they become available.</p>
+
+      <!--
+        When you have entries: delete the paragraph above, then uncomment the
+        block below. Copy a <li class="pub"> for each paper or talk.
+
+      <h3 class="list-heading">Publications</h3>
+      <ul class="pub-list">
+        <li class="pub reveal">
+          <div class="pub-year">2026</div>
+          <div class="pub-body">
+            <div class="pub-title">Paper title</div>
+            <div class="pub-authors">A. De Goyeneche, <strong>S. Ravichandran</strong>, S. Yu, M. Lustig</div>
+            <div class="pub-venue">Journal or conference</div>
+            <div class="pub-links">
+              <a href="LINK-TO-PDF">PDF</a>
+              <a href="https://doi.org/...">DOI</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <h3 class="list-heading">Presentations</h3>
+      <ul class="pub-list">
+        <li class="pub reveal">
+          <div class="pub-year">2026</div>
+          <div class="pub-body">
+            <div class="pub-title">Talk or poster title</div>
+            <div class="pub-authors"><strong>S. Ravichandran</strong>, A. De Goyeneche, S. Yu, M. Lustig</div>
+            <div class="pub-venue">Venue, location · Oral / Poster</div>
+            <div class="pub-links">
+              <a href="LINK-TO-SLIDES">Slides</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      -->
+    </section>
+
+    <!-- AUTHORS -->
+    <section id="authors">
+      <div class="section-label reveal">04 · Authors</div>
+      <h2 class="reveal">Authors</h2>
+
+      <div class="author-grid">
+        <div class="author reveal">
+          <div class="author-name">Alfredo De Goyeneche</div>
+          <div class="author-role">PhD Student</div>
+          <div class="author-affil">UC Berkeley, EECS</div>
+        </div>
+        <div class="author reveal">
+          <div class="author-name">Shruthi Ravichandran</div>
+          <div class="author-role">PhD Student</div>
+          <div class="author-affil">UC Berkeley, EECS</div>
+        </div>
+        <div class="author reveal">
+          <div class="author-name">Stella Yu</div>
+          <div class="author-role">Principal Investigator</div>
+          <div class="author-affil">UC Berkeley, EECS &amp; University of Michigan</div>
+        </div>
+        <div class="author reveal">
+          <div class="author-name">Miki Lustig</div>
+          <div class="author-role">Principal Investigator</div>
+          <div class="author-affil">UC Berkeley, EECS</div>
         </div>
       </div>
-      <div class="approach-step">
-        <div class="step-num">03</div>
-        <div class="step-body">
-          <h3>Integrate with the scanner</h3>
-          <p>All electronics and pneumatic hardware live outside the scanner bore, connected to the vest via flexible tubing. MRI-compatible sensing lets us use scanner-native signals — including navigator echoes and Beat Pilot Tone — to drive feedback without additional equipment inside the bore.</p>
-        </div>
-      </div>
-      <div class="approach-step">
-        <div class="step-num">04</div>
-        <div class="step-body">
-          <h3>Adapt to the individual</h3>
-          <p>Breathing responses to haptic cues vary across people. Our longer-term goal is a closed-loop controller that learns each patient's response and adjusts feedback timing and intensity accordingly — moving beyond fixed heuristics toward truly personalized respiratory guidance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- DIRECTIONS -->
-  <section id="directions">
-    <div class="section-label">Current Directions</div>
-    <h2>Where we're headed</h2>
-    <p class="wide">AIrVest is an active research project. We're simultaneously developing the hardware, the control algorithms, and the clinical evaluation framework. Here's what we're actively working on.</p>
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-label reveal">05 · Contact</div>
+      <h2 class="reveal">Get in touch</h2>
+      <p class="reveal">For questions about this work or potential collaborations, please reach out.</p>
 
-    <div class="directions-grid">
-      <div class="direction-card active-card">
-        <div class="dir-eyebrow">Hardware</div>
-        <h3>MRI-compatible vest design</h3>
-        <p>Iterating on vest form factor, chamber geometry, and materials to maximize comfort and pressure delivery while maintaining full MRI compatibility across field strengths.</p>
-      </div>
-      <div class="direction-card active-card">
-        <div class="dir-eyebrow">Control</div>
-        <h3>Personalized closed-loop control</h3>
-        <p>Developing adaptive controllers — including model predictive control approaches — that adjust to each patient's entrainment response rather than applying fixed timing heuristics.</p>
-      </div>
-      <div class="direction-card active-card">
-        <div class="dir-eyebrow">Sensing</div>
-        <h3>Scanner-native motion signals</h3>
-        <p>Integrating Beat Pilot Tone and navigator echoes as primary motion sensing modalities to eliminate dependence on external sensors inside the scanner environment.</p>
-      </div>
-      <div class="direction-card active-card">
-        <div class="dir-eyebrow">Evaluation</div>
-        <h3>Imaging quality metrics</h3>
-        <p>Building a systematic framework for quantifying how well AIrVest reduces motion artifacts in MRI and improves target stability in simulated radiotherapy scenarios.</p>
-      </div>
-    </div>
-  </section>
+      <dl class="contact-list reveal">
+        <dt>Email</dt>
+        <dd><a href="mailto:shruthi@berkeley.edu">shruthi@berkeley.edu</a></dd>
+        <dt>Website</dt>
+        <dd><a href="https://shruthiravichandran.github.io">shruthiravichandran.github.io</a></dd>
+      </dl>
+    </section>
 
-  <!-- UPDATES -->
-  <section id="updates">
-    <div class="section-label">Updates</div>
-    <h2>Project milestones</h2>
-
-    <div class="updates-list">
-      <div class="update-item">
-        <div class="update-date">2025</div>
-        <div class="update-body"><strong>Project launched</strong> — AIrVest initiated at UC Berkeley EECS. Initial system architecture, vest prototyping, and non-MR development configuration established.</div>
-      </div>
-      <div class="update-item">
-        <div class="update-date">2025</div>
-        <div class="update-body"><strong>MRI integration</strong> — Preliminary in-scanner deployment completed. Demonstrated compatibility with MRI environment and feasibility of scanner-native motion sensing.</div>
-      </div>
-      <div class="update-item">
-        <div class="update-date">2026</div>
-        <div class="update-body"><strong>Pilot evaluation</strong> — Initial human subject testing conducted under IRB approval. Results informing adaptive control development and next hardware iteration.</div>
-      </div>
-      <div class="update-item">
-        <div class="update-date">Ongoing</div>
-        <div class="update-body"><strong>Closed-loop control</strong> — Active development of personalized feedback controllers. Formal imaging characterization and expanded subject studies in progress.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEAM -->
-  <section id="team">
-    <div class="section-label">Team</div>
-    <h2>Who we are</h2>
-    <p>AIrVest is a collaboration within the <a href="https://people.eecs.berkeley.edu/~mlustig/" target="_blank" style="color:var(--accent);text-decoration:none;">Lustig Lab</a> at UC Berkeley's Department of Electrical Engineering and Computer Science.</p>
-
-    <div class="team-grid">
-      <div class="team-card">
-        <div class="team-name">Alfredo De Goyeneche</div>
-        <div class="team-role">PhD Student</div>
-        <div class="team-affil">UC Berkeley · EECS</div>
-      </div>
-      <div class="team-card you">
-        <div class="team-name">Shruthi Ravichandran</div>
-        <div class="team-role">PhD Student</div>
-        <div class="team-affil">UC Berkeley · EECS</div>
-      </div>
-      <div class="team-card">
-        <div class="team-name">Stella Yu</div>
-        <div class="team-role">Collaborator</div>
-        <div class="team-affil">UC Berkeley · EECS &amp; University of Michigan</div>
-      </div>
-      <div class="team-card">
-        <div class="team-name">Miki Lustig</div>
-        <div class="team-role">Principal Investigator</div>
-        <div class="team-affil">UC Berkeley · EECS</div>
-      </div>
-    </div>
-
-    <p style="margin-top:2.2rem;font-size:0.88rem;color:var(--muted);">Interested in this work or potential collaboration? Reach out at <a href="mailto:shruthi@berkeley.edu" style="color:var(--accent);text-decoration:none;">shruthi@berkeley.edu</a>.</p>
-  </section>
+  </main>
 
   <footer>
-    <span class="footer-name">Shruthi Ravichandran · UC Berkeley · shruthi@berkeley.edu</span>
-    <a class="footer-back" href="https://shruthiravichandran.github.io" target="_blank">← Back to main site</a>
+    <span>© 2026 AIrVest · UC Berkeley</span>
+    <a href="https://shruthiravichandran.github.io">← Shruthi Ravichandran</a>
   </footer>
+
+  <script>
+    // Fade sections in as they scroll into view.
+    (function () {
+      var items = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      items.forEach(function (el) { io.observe(el); });
+
+      // Highlight the nav link for the section currently on screen.
+      var links = document.querySelectorAll('.nav-links a');
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          links.forEach(function (a) {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+          });
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      document.querySelectorAll('main section').forEach(function (s) { spy.observe(s); });
+    })();
+  </script>
 
 </body>
 </html>
